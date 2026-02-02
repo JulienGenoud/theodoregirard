@@ -1,10 +1,10 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { 
-  BookOpen, 
-  ChevronLeft, 
-  ChevronRight, 
-  Info, 
-  Feather, 
+import {
+  BookOpen,
+  ChevronLeft,
+  ChevronRight,
+  Info,
+  Feather,
   Scroll,
   Menu,
   X,
@@ -22,15 +22,15 @@ import {
   Coins,
   Key
 } from 'lucide-react';
-import { 
-  BIOGRAPHY_EVENTS, 
-  CONTEXT_POINTS, 
-  BOOK_PAGES_IDS, 
-  TABLE_OF_CONTENTS, 
-  BOOK_THEMES, 
-  KEY_FIGURES, 
-  ANECDOTES, 
-  VOCABULARY, 
+import {
+  BIOGRAPHY_EVENTS,
+  CONTEXT_POINTS,
+  BOOK_PAGES_IDS,
+  TABLE_OF_CONTENTS,
+  BOOK_THEMES,
+  KEY_FIGURES,
+  ANECDOTES,
+  VOCABULARY,
   BONAPARTIST_CONTEXT,
   EVOLUTION_ANALYSIS
 } from './constants';
@@ -59,17 +59,16 @@ const Navigation: React.FC<{ activeSection: Section; onNavigate: (s: Section) =>
             <Feather className="h-6 w-6 text-amber-700 mr-2" />
             <span className="font-serif text-xl font-bold text-stone-800 tracking-wide">Archives Girard</span>
           </div>
-          
+
           <div className="hidden md:flex space-x-6">
             {navItems.map((item) => (
               <button
                 key={item.id}
                 onClick={() => onNavigate(item.id)}
-                className={`px-3 py-2 text-sm font-medium transition-colors duration-200 ${
-                  activeSection === item.id 
-                    ? 'text-amber-700 border-b-2 border-amber-700' 
+                className={`px-3 py-2 text-sm font-medium transition-colors duration-200 ${activeSection === item.id
+                    ? 'text-amber-700 border-b-2 border-amber-700'
                     : 'text-stone-600 hover:text-stone-900'
-                }`}
+                  }`}
               >
                 {item.label}
               </button>
@@ -94,11 +93,10 @@ const Navigation: React.FC<{ activeSection: Section; onNavigate: (s: Section) =>
                   onNavigate(item.id);
                   setIsOpen(false);
                 }}
-                className={`block w-full text-left px-3 py-4 text-base font-medium ${
-                  activeSection === item.id 
-                    ? 'bg-amber-50 text-amber-800' 
+                className={`block w-full text-left px-3 py-4 text-base font-medium ${activeSection === item.id
+                    ? 'bg-amber-50 text-amber-800'
                     : 'text-stone-600 hover:bg-stone-50'
-                }`}
+                  }`}
               >
                 {item.label}
               </button>
@@ -114,29 +112,29 @@ const Hero: React.FC<{ onRead: () => void }> = ({ onRead }) => {
   return (
     <div className="relative bg-stone-100 min-h-screen flex items-center justify-center overflow-hidden pt-16">
       <div className="absolute inset-0 opacity-10 pointer-events-none" style={{ backgroundImage: 'url("https://www.transparenttextures.com/patterns/paper-fibers.png")' }}></div>
-      
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
         <div className="text-center lg:text-left space-y-8">
           <div className="inline-flex items-center px-4 py-2 rounded-full bg-amber-100 text-amber-900 text-sm font-semibold tracking-wider uppercase mb-4">
             Archives 1872-1918
           </div>
           <h1 className="text-5xl lg:text-7xl font-serif text-stone-900 leading-tight">
-            La Forge d'un <br/>
+            La Forge d'un <br />
             <span className="text-amber-700 italic">Républicain</span>
           </h1>
           <p className="text-xl text-stone-600 font-serif max-w-2xl mx-auto lg:mx-0 leading-relaxed">
-             Des tranchées de la presse charentaise aux ors du Ministère de la Justice.
-             Découvrez comment un jeune militant anticlérical, témoin de la "Guerre des Journaux", est devenu l'une des consciences morales de la Troisième République.
+            Des tranchées de la presse charentaise aux ors du Ministère de la Justice.
+            Découvrez comment un jeune militant anticlérical, témoin de la "Guerre des Journaux", est devenu l'une des consciences morales de la Troisième République.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-            <button 
+            <button
               onClick={onRead}
               className="px-8 py-4 bg-stone-900 text-stone-50 rounded shadow-lg hover:bg-stone-800 transition-all flex items-center justify-center gap-2 group"
             >
-              <BookOpen size={20} className="group-hover:scale-110 transition-transform"/>
+              <BookOpen size={20} className="group-hover:scale-110 transition-transform" />
               Consulter le Livre de Combat
             </button>
-            <a 
+            <a
               href="#stories"
               className="px-8 py-4 bg-white border border-stone-300 text-stone-700 rounded shadow-sm hover:bg-stone-50 transition-all flex items-center justify-center gap-2"
             >
@@ -148,9 +146,9 @@ const Hero: React.FC<{ onRead: () => void }> = ({ onRead }) => {
 
         <div className="relative">
           <div className="relative w-80 h-96 mx-auto lg:w-96 lg:h-[30rem] bg-stone-200 rounded-lg shadow-2xl rotate-3 border-8 border-white overflow-hidden sepia-[.3]">
-            <img 
-              src="photo.png" 
-              alt="Portrait de Théodore Girard" 
+            <img
+              src="/photo.png"
+              alt="Portrait de Théodore Girard"
               className="object-cover w-full h-full opacity-90 hover:scale-105 transition-transform duration-700"
             />
             <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 to-transparent p-6">
@@ -183,7 +181,7 @@ const Biography: React.FC = () => {
               <div className={`absolute -left-[9px] top-0 md:left-1/2 md:-ml-[9px] w-5 h-5 rounded-full border-4 border-white shadow z-10 group-hover:scale-125 transition-transform ${event.period === 'roots' ? 'bg-amber-600' : 'bg-stone-800'}`}></div>
               <div className={`md:w-1/2 ${idx % 2 === 0 ? 'md:pr-12 md:text-right' : 'md:pl-12 md:ml-auto'}`}>
                 <span className={`font-bold font-sans text-sm tracking-widest ${event.period === 'roots' ? 'text-amber-700' : 'text-stone-600'}`}>
-                   {event.period === 'roots' ? 'RACINES & MILITANTISME' : 'HOMME D\'ÉTAT'} • {event.year}
+                  {event.period === 'roots' ? 'RACINES & MILITANTISME' : 'HOMME D\'ÉTAT'} • {event.year}
                 </span>
                 <h3 className="text-xl font-serif font-bold text-stone-800 mt-1 mb-2">{event.title}</h3>
                 <p className="text-stone-600 leading-relaxed font-serif italic">
@@ -204,12 +202,12 @@ const Context: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div className="col-span-1 md:col-span-1 bg-stone-800 text-stone-50 p-8 rounded-lg shadow-xl flex flex-col justify-between">
-             <div>
-                <h3 className="text-2xl font-serif mb-6 border-b border-stone-600 pb-4">La Guerre de 1870-1876</h3>
-                <p className="mb-4 text-stone-300 font-light">
-                  Ces archives ne sont pas neutres. Elles sont le témoignage brut d'une France déchirée qui hésite encore entre la Monarchie, l'Empire et la République.
-                </p>
-             </div>
+            <div>
+              <h3 className="text-2xl font-serif mb-6 border-b border-stone-600 pb-4">La Guerre de 1870-1876</h3>
+              <p className="mb-4 text-stone-300 font-light">
+                Ces archives ne sont pas neutres. Elles sont le témoignage brut d'une France déchirée qui hésite encore entre la Monarchie, l'Empire et la République.
+              </p>
+            </div>
             <div className="mt-8 flex items-center text-amber-500">
               <Scroll size={20} className="mr-2" />
               <span className="text-sm uppercase tracking-widest">Archives</span>
@@ -248,14 +246,14 @@ const StoriesSection: React.FC = () => {
   return (
     <section className="py-24 bg-sepia-200 relative overflow-hidden">
       <div className="absolute top-0 left-0 w-full h-full opacity-5 bg-[url('https://www.transparenttextures.com/patterns/aged-paper.png')]"></div>
-      
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center mb-16">
-           <span className="inline-block px-3 py-1 bg-amber-800 text-amber-100 text-xs font-bold tracking-widest uppercase rounded-full mb-4">Archives Vivantes</span>
-           <h2 className="text-4xl font-serif text-stone-900 mb-6">Au Cœur de la Mêlée (1872-1876)</h2>
-           <p className="text-stone-700 text-lg max-w-2xl mx-auto italic font-serif">
-             Quand la politique se réglait à coups de plumes, de procès et d'arnaques aux violettes.
-           </p>
+          <span className="inline-block px-3 py-1 bg-amber-800 text-amber-100 text-xs font-bold tracking-widest uppercase rounded-full mb-4">Archives Vivantes</span>
+          <h2 className="text-4xl font-serif text-stone-900 mb-6">Au Cœur de la Mêlée (1872-1876)</h2>
+          <p className="text-stone-700 text-lg max-w-2xl mx-auto italic font-serif">
+            Quand la politique se réglait à coups de plumes, de procès et d'arnaques aux violettes.
+          </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -265,12 +263,12 @@ const StoriesSection: React.FC = () => {
                 {getIcon(story.icon)}
               </div>
               <div className="mt-8 text-center">
-                 <span className="text-stone-400 font-serif italic text-sm">{story.year} • Page {story.pageRef}</span>
-                 <h3 className="text-xl font-bold font-serif text-stone-900 mt-2 mb-4 leading-tight">{story.title}</h3>
-                 <p className="text-stone-600 text-sm mb-4 leading-relaxed">{story.content}</p>
-                 <div className="bg-amber-50 p-3 rounded text-xs text-amber-900 font-medium italic border-l-2 border-amber-600 text-left">
-                   💡 {story.analysis}
-                 </div>
+                <span className="text-stone-400 font-serif italic text-sm">{story.year} • Page {story.pageRef}</span>
+                <h3 className="text-xl font-bold font-serif text-stone-900 mt-2 mb-4 leading-tight">{story.title}</h3>
+                <p className="text-stone-600 text-sm mb-4 leading-relaxed">{story.content}</p>
+                <div className="bg-amber-50 p-3 rounded text-xs text-amber-900 font-medium italic border-l-2 border-amber-600 text-left">
+                  💡 {story.analysis}
+                </div>
               </div>
             </div>
           ))}
@@ -292,36 +290,36 @@ const KeysSection: React.FC = () => {
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-          
+
           {/* Vocabulaire */}
           <div className="bg-stone-50 p-8 rounded-lg border border-stone-200">
-             <h3 className="text-xl font-bold font-serif text-stone-900 mb-6 flex items-center gap-2">
-               <BookOpen size={20} className="text-amber-700"/> Le Vocabulaire du Combat
-             </h3>
-             <ul className="space-y-6">
-               {VOCABULARY.map((voc, idx) => (
-                 <li key={idx} className="flex gap-4">
-                   <span className="font-bold text-stone-800 whitespace-nowrap">{voc.term} :</span>
-                   <span className="text-stone-600 italic text-sm">{voc.def}</span>
-                 </li>
-               ))}
-             </ul>
+            <h3 className="text-xl font-bold font-serif text-stone-900 mb-6 flex items-center gap-2">
+              <BookOpen size={20} className="text-amber-700" /> Le Vocabulaire du Combat
+            </h3>
+            <ul className="space-y-6">
+              {VOCABULARY.map((voc, idx) => (
+                <li key={idx} className="flex gap-4">
+                  <span className="font-bold text-stone-800 whitespace-nowrap">{voc.term} :</span>
+                  <span className="text-stone-600 italic text-sm">{voc.def}</span>
+                </li>
+              ))}
+            </ul>
           </div>
 
           {/* Contexte Eco + Evolution */}
           <div className="space-y-8">
-             <div className="bg-stone-800 text-stone-100 p-8 rounded-lg shadow-md relative overflow-hidden">
-                <Coins className="absolute top-4 right-4 text-stone-700 opacity-20" size={120} />
-                <h3 className="text-xl font-bold font-serif text-amber-500 mb-4">{BONAPARTIST_CONTEXT.title}</h3>
-                <p className="text-sm leading-relaxed text-stone-300 relative z-10">{BONAPARTIST_CONTEXT.text}</p>
-             </div>
+            <div className="bg-stone-800 text-stone-100 p-8 rounded-lg shadow-md relative overflow-hidden">
+              <Coins className="absolute top-4 right-4 text-stone-700 opacity-20" size={120} />
+              <h3 className="text-xl font-bold font-serif text-amber-500 mb-4">{BONAPARTIST_CONTEXT.title}</h3>
+              <p className="text-sm leading-relaxed text-stone-300 relative z-10">{BONAPARTIST_CONTEXT.text}</p>
+            </div>
 
-             <div className="bg-amber-50 p-8 rounded-lg border border-amber-200">
-                <h3 className="text-xl font-bold font-serif text-amber-900 mb-4 flex items-center gap-2">
-                   <TrendingUp size={20} /> {EVOLUTION_ANALYSIS.title}
-                </h3>
-                <p className="text-sm leading-relaxed text-amber-900/80">{EVOLUTION_ANALYSIS.text}</p>
-             </div>
+            <div className="bg-amber-50 p-8 rounded-lg border border-amber-200">
+              <h3 className="text-xl font-bold font-serif text-amber-900 mb-4 flex items-center gap-2">
+                <TrendingUp size={20} /> {EVOLUTION_ANALYSIS.title}
+              </h3>
+              <p className="text-sm leading-relaxed text-amber-900/80">{EVOLUTION_ANALYSIS.text}</p>
+            </div>
           </div>
         </div>
       </div>
@@ -363,19 +361,19 @@ const BookAnalysis: React.FC = () => {
 
         {/* Galerie des Acteurs */}
         <div className="bg-stone-900 rounded-xl p-8 md:p-12 text-stone-50">
-           <h3 className="text-2xl font-serif mb-8 text-center text-amber-500 border-b border-stone-800 pb-4">Les Acteurs du Drame</h3>
-           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              {KEY_FIGURES.map((fig, idx) => (
-                <div key={idx} className="flex flex-col items-center text-center">
-                   <div className="w-16 h-16 rounded-full bg-stone-800 flex items-center justify-center text-2xl font-serif mb-4 border border-stone-700">
-                     {fig.name.charAt(0)}
-                   </div>
-                   <h4 className="text-lg font-bold text-stone-200">{fig.name}</h4>
-                   <span className="text-xs uppercase tracking-widest text-amber-600 mb-2 block">{fig.role}</span>
-                   <p className="text-stone-400 text-sm italic">{fig.desc}</p>
+          <h3 className="text-2xl font-serif mb-8 text-center text-amber-500 border-b border-stone-800 pb-4">Les Acteurs du Drame</h3>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {KEY_FIGURES.map((fig, idx) => (
+              <div key={idx} className="flex flex-col items-center text-center">
+                <div className="w-16 h-16 rounded-full bg-stone-800 flex items-center justify-center text-2xl font-serif mb-4 border border-stone-700">
+                  {fig.name.charAt(0)}
                 </div>
-              ))}
-           </div>
+                <h4 className="text-lg font-bold text-stone-200">{fig.name}</h4>
+                <span className="text-xs uppercase tracking-widest text-amber-600 mb-2 block">{fig.role}</span>
+                <p className="text-stone-400 text-sm italic">{fig.desc}</p>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </section>
@@ -385,7 +383,7 @@ const BookAnalysis: React.FC = () => {
 const BookReader: React.FC<{ currentPageIndex: number; setCurrentPageIndex: (p: number) => void }> = ({ currentPageIndex, setCurrentPageIndex }) => {
   const [isFullScreen, setIsFullScreen] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
-  
+
   // Safety check: ensure we have pages
   const totalPages = BOOK_PAGES_IDS.length;
   const currentId = BOOK_PAGES_IDS[currentPageIndex];
@@ -394,14 +392,14 @@ const BookReader: React.FC<{ currentPageIndex: number; setCurrentPageIndex: (p: 
   const embedUrl = `https://drive.google.com/file/d/${currentId}/preview`;
 
   // Handlers
-  const handlePrev = () => { 
-    if (currentPageIndex > 0) setCurrentPageIndex(currentPageIndex - 1); 
+  const handlePrev = () => {
+    if (currentPageIndex > 0) setCurrentPageIndex(currentPageIndex - 1);
   };
-  
-  const handleNext = () => { 
-    if (currentPageIndex < totalPages - 1) setCurrentPageIndex(currentPageIndex + 1); 
+
+  const handleNext = () => {
+    if (currentPageIndex < totalPages - 1) setCurrentPageIndex(currentPageIndex + 1);
   };
-  
+
   const handlePageInput = (e: React.ChangeEvent<HTMLInputElement>) => {
     const val = parseInt(e.target.value);
     if (!isNaN(val) && val >= 1 && val <= totalPages) {
@@ -436,7 +434,7 @@ const BookReader: React.FC<{ currentPageIndex: number; setCurrentPageIndex: (p: 
   }
 
   // Classes for fullscreen handling
-  const containerClasses = isFullScreen 
+  const containerClasses = isFullScreen
     ? "fixed inset-0 z-50 bg-stone-900 flex flex-col items-center justify-center p-0"
     : "bg-stone-200 min-h-screen pt-20 pb-12 flex flex-col items-center relative border-t border-stone-300";
 
@@ -454,36 +452,36 @@ const BookReader: React.FC<{ currentPageIndex: number; setCurrentPageIndex: (p: 
 
   return (
     <div ref={containerRef} className={containerClasses}>
-      
+
       {/* Controls Header */}
       <div className={controlsClasses}>
-        
+
         {/* Navigation */}
         <div className="flex items-center gap-2">
-          <button 
-            onClick={handlePrev} 
+          <button
+            onClick={handlePrev}
             disabled={currentPageIndex === 0}
             className="p-2 rounded hover:bg-stone-700 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
             title="Page précédente"
           >
             <ChevronLeft size={20} />
           </button>
-          
+
           <span className="font-mono text-sm flex items-center">
-            Page 
-            <input 
-              type="number" 
-              value={currentPageIndex + 1} 
+            Page
+            <input
+              type="number"
+              value={currentPageIndex + 1}
               onChange={handlePageInput}
               min={1}
               max={totalPages}
               className="bg-stone-800 text-white w-14 text-center rounded border border-stone-700 mx-2 focus:outline-none focus:border-amber-500"
-            /> 
+            />
             / {totalPages}
           </span>
-          
-          <button 
-            onClick={handleNext} 
+
+          <button
+            onClick={handleNext}
             disabled={currentPageIndex === totalPages - 1}
             className="p-2 rounded hover:bg-stone-700 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
             title="Page suivante"
@@ -496,58 +494,58 @@ const BookReader: React.FC<{ currentPageIndex: number; setCurrentPageIndex: (p: 
         <div className="flex items-center gap-4 text-sm font-sans text-stone-400 hidden lg:flex">
           <BookOpen size={16} />
           <span className="flex items-center gap-2 text-stone-300">
-             Livre de Combat - Page {currentPageIndex + 1}
+            Livre de Combat - Page {currentPageIndex + 1}
           </span>
         </div>
 
         {/* Right Tools */}
         <div className="flex items-center gap-2">
-           <button 
-             onClick={toggleFullScreen}
-             className="p-2 hover:bg-stone-700 rounded text-stone-400 hover:text-white flex items-center gap-2 text-xs"
-             title={isFullScreen ? "Quitter le plein écran" : "Plein écran"}
-           >
-             {isFullScreen ? <Minimize size={20}/> : <Maximize size={20}/>}
-           </button>
+          <button
+            onClick={toggleFullScreen}
+            className="p-2 hover:bg-stone-700 rounded text-stone-400 hover:text-white flex items-center gap-2 text-xs"
+            title={isFullScreen ? "Quitter le plein écran" : "Plein écran"}
+          >
+            {isFullScreen ? <Minimize size={20} /> : <Maximize size={20} />}
+          </button>
 
-           <a 
-             href={`https://drive.google.com/file/d/${currentId}/view`} 
-             target="_blank" 
-             rel="noopener noreferrer" 
-             className="p-2 hover:bg-stone-700 rounded text-stone-400 hover:text-white flex items-center gap-2 text-xs"
-             title="Ouvrir dans Google Drive"
-           >
-             <ExternalLink size={20}/>
-           </a>
+          <a
+            href={`https://drive.google.com/file/d/${currentId}/view`}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="p-2 hover:bg-stone-700 rounded text-stone-400 hover:text-white flex items-center gap-2 text-xs"
+            title="Ouvrir dans Google Drive"
+          >
+            <ExternalLink size={20} />
+          </a>
         </div>
       </div>
 
       {/* Reader Area */}
       <div className={viewerContainerClasses}>
         <div className={`relative w-full ${isFullScreen ? 'h-full' : 'bg-white shadow-[0_20px_50px_rgba(0,0,0,0.3)] border border-stone-300 rounded-sm overflow-hidden'}`} style={!isFullScreen ? { minHeight: '80vh' } : {}}>
-           
-           {/* Iframe Loading State - Only show if not full screen or handled better */}
-           {!isFullScreen && (
+
+          {/* Iframe Loading State - Only show if not full screen or handled better */}
+          {!isFullScreen && (
             <div className="absolute inset-0 flex items-center justify-center z-0 bg-stone-100">
-                <div className="animate-spin rounded-full h-12 w-12 border-4 border-stone-300 border-t-amber-700"></div>
+              <div className="animate-spin rounded-full h-12 w-12 border-4 border-stone-300 border-t-amber-700"></div>
             </div>
-           )}
+          )}
 
-           {/* The Viewer */}
-           <iframe 
-             key={currentId} // Force reload on ID change
-             src={embedUrl} 
-             className={iframeClasses}
-             title={`Page ${currentPageIndex + 1}`}
-             allow="autoplay; fullscreen"
-           ></iframe>
+          {/* The Viewer */}
+          <iframe
+            key={currentId} // Force reload on ID change
+            src={embedUrl}
+            className={iframeClasses}
+            title={`Page ${currentPageIndex + 1}`}
+            allow="autoplay; fullscreen"
+          ></iframe>
 
-           {/* Navigation Overlay (for easy clicking) */}
-           <div className="absolute top-0 bottom-0 left-0 w-12 hover:bg-black/5 z-20 cursor-pointer hidden md:block" onClick={handlePrev} title="Précédent"></div>
-           <div className="absolute top-0 bottom-0 right-0 w-12 hover:bg-black/5 z-20 cursor-pointer hidden md:block" onClick={handleNext} title="Suivant"></div>
+          {/* Navigation Overlay (for easy clicking) */}
+          <div className="absolute top-0 bottom-0 left-0 w-12 hover:bg-black/5 z-20 cursor-pointer hidden md:block" onClick={handlePrev} title="Précédent"></div>
+          <div className="absolute top-0 bottom-0 right-0 w-12 hover:bg-black/5 z-20 cursor-pointer hidden md:block" onClick={handleNext} title="Suivant"></div>
         </div>
       </div>
-      
+
       {!isFullScreen && (
         <p className="mt-6 text-stone-500 text-xs text-center max-w-md font-sans">
           Astuce : Utilisez les flèches de votre clavier ou cliquez sur les bords pour tourner les pages.
@@ -564,8 +562,8 @@ const Summary: React.FC<{ onGoToPage: (page: number) => void }> = ({ onGoToPage 
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-3xl font-serif text-stone-900 mb-4 flex items-center justify-center gap-3">
-             <List className="text-amber-700" size={32} />
-             Index du Livre
+            <List className="text-amber-700" size={32} />
+            Index du Livre
           </h2>
           <div className="w-24 h-1 bg-amber-700 mx-auto rounded-full mb-6"></div>
           <p className="text-stone-600 max-w-2xl mx-auto italic font-serif">
@@ -574,24 +572,24 @@ const Summary: React.FC<{ onGoToPage: (page: number) => void }> = ({ onGoToPage 
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-2 bg-stone-50 p-8 rounded-lg border border-stone-200 shadow-inner">
-           {TABLE_OF_CONTENTS.map((item, idx) => (
-             <div 
-               key={idx} 
-               onClick={() => {
-                 onGoToPage(item.page);
-                 // Optional: scroll to reader when clicking TOC
-                 const el = document.getElementById('reader');
-                 if(el) el.scrollIntoView({ behavior: 'smooth' });
-               }}
-               className="group flex items-baseline justify-between py-2 border-b border-stone-200 last:border-0 hover:bg-white cursor-pointer px-2 rounded transition-colors"
-             >
-                <span className="font-serif text-stone-800 group-hover:text-amber-800 transition-colors text-lg truncate pr-4">
-                   {item.title}
-                </span>
-                <span className="flex-1 border-b border-dotted border-stone-400 mx-2 relative -top-1 opacity-30"></span>
-                <span className="font-sans font-bold text-amber-700 text-sm whitespace-nowrap">P. {item.page}</span>
-             </div>
-           ))}
+          {TABLE_OF_CONTENTS.map((item, idx) => (
+            <div
+              key={idx}
+              onClick={() => {
+                onGoToPage(item.page);
+                // Optional: scroll to reader when clicking TOC
+                const el = document.getElementById('reader');
+                if (el) el.scrollIntoView({ behavior: 'smooth' });
+              }}
+              className="group flex items-baseline justify-between py-2 border-b border-stone-200 last:border-0 hover:bg-white cursor-pointer px-2 rounded transition-colors"
+            >
+              <span className="font-serif text-stone-800 group-hover:text-amber-800 transition-colors text-lg truncate pr-4">
+                {item.title}
+              </span>
+              <span className="flex-1 border-b border-dotted border-stone-400 mx-2 relative -top-1 opacity-30"></span>
+              <span className="font-sans font-bold text-amber-700 text-sm whitespace-nowrap">P. {item.page}</span>
+            </div>
+          ))}
         </div>
       </div>
     </section>
@@ -606,8 +604,8 @@ const Footer: React.FC = () => {
           <h4 className="text-stone-200 font-serif text-lg mb-4">Archives Théodore Girard</h4>
           <p>Une initiative pour préserver la mémoire politique de la Troisième République.</p>
           <div className="mt-4">
-            <a 
-              href="mailto:théo.girard17800@gmail.com" 
+            <a
+              href="mailto:théo.girard17800@gmail.com"
               className="text-amber-500 hover:text-amber-400 transition-colors flex items-center gap-2"
             >
               ✉️ théo.girard17800@gmail.com
@@ -642,7 +640,7 @@ const Footer: React.FC = () => {
         <div>
           <h4 className="text-stone-200 font-serif text-lg mb-4">Crédits</h4>
           <p>Développé avec React & Google Drive Embed.</p>
-          <p className="mt-2 text-stone-600">© 2023 - Domaine Public</p>
+          <p className="mt-2 text-stone-600">© 2026 - Domaine Public</p>
         </div>
       </div>
     </footer>
@@ -659,9 +657,9 @@ const App: React.FC = () => {
     setActiveSection(section);
     const el = document.getElementById(section);
     if (el) {
-       el.scrollIntoView({ behavior: 'smooth' });
+      el.scrollIntoView({ behavior: 'smooth' });
     } else {
-       window.scrollTo({ top: 0, behavior: 'smooth' });
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     }
   };
 
@@ -675,11 +673,11 @@ const App: React.FC = () => {
   return (
     <div className="min-h-screen bg-paper text-ink font-sans selection:bg-amber-200 selection:text-amber-900">
       <Navigation activeSection={activeSection} onNavigate={handleNavigate} />
-      
+
       <div id="home">
         <Hero onRead={() => handleNavigate('stories')} />
       </div>
-      
+
       <div id="bio">
         <Biography />
       </div>
@@ -703,7 +701,7 @@ const App: React.FC = () => {
       <div id="reader">
         <BookReader currentPageIndex={currentPageIndex} setCurrentPageIndex={setCurrentPageIndex} />
       </div>
-      
+
       <div id="summary">
         <Summary onGoToPage={handleGoToPage} />
       </div>
