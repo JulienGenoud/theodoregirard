@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Archives Théodore Girard</title>
+
+  <!-- Styles -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400&family=Lato:wght@300;400;700&display=swap"
+    rel="stylesheet">
+
+  <!-- Config Tailwind -->
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            serif: ['"Crimson Text"', 'serif'],
+            sans: ['"Lato"', 'sans-serif'],
+          },
+          colors: {
+            paper: '#fdfbf7',
+            ink: '#2d2a2e',
+            sepia: {
+              50: '#fdfbf6',
+              100: '#f7f1e3',
+              200: '#efe2c7',
+              300: '#e5ceaa',
+              800: '#5c4d3c',
+              900: '#3e3226',
+              31: '#5c4d3c',
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body {
+      background-color: #fdfbf7;
+      color: #2d2a2e;
+    }
+
+    .pdf-scroll::-webkit-scrollbar {
+      width: 8px;
+      height: 8px;
+    }
+
+    .pdf-scroll::-webkit-scrollbar-track {
+      background: #f1f1f1;
+    }
+
+    .pdf-scroll::-webkit-scrollbar-thumb {
+      background: #c1c1c1;
+      border-radius: 4px;
+    }
+
+    .pdf-scroll::-webkit-scrollbar-thumb:hover {
+      background: #a8a8a8;
+    }
+  </style>
+
+  <link rel="icon" type="image/png" href="./favicon.png" />
+  <script type="module" crossorigin src="./assets/index.js"></script>
+</head>
+
+<body>
+  <div id="root"></div>
+
+  <!-- MAIN APPLICATION SCRIPT -->
+</body>
+
+</html>
