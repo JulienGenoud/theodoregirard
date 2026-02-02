@@ -149,7 +149,7 @@ const Hero: React.FC<{ onRead: () => void }> = ({ onRead }) => {
         <div className="relative">
           <div className="relative w-80 h-96 mx-auto lg:w-96 lg:h-[30rem] bg-stone-200 rounded-lg shadow-2xl rotate-3 border-8 border-white overflow-hidden sepia-[.3]">
             <img 
-              src="Théodore_Girard_2.jpg" 
+              src="photo.png" 
               alt="Portrait de Théodore Girard" 
               className="object-cover w-full h-full opacity-90 hover:scale-105 transition-transform duration-700"
             />
