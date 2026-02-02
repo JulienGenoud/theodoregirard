@@ -66,8 +66,8 @@ const Navigation: React.FC<{ activeSection: Section; onNavigate: (s: Section) =>
                 key={item.id}
                 onClick={() => onNavigate(item.id)}
                 className={`px-3 py-2 text-sm font-medium transition-colors duration-200 ${activeSection === item.id
-                    ? 'text-amber-700 border-b-2 border-amber-700'
-                    : 'text-stone-600 hover:text-stone-900'
+                  ? 'text-amber-700 border-b-2 border-amber-700'
+                  : 'text-stone-600 hover:text-stone-900'
                   }`}
               >
                 {item.label}
@@ -94,8 +94,8 @@ const Navigation: React.FC<{ activeSection: Section; onNavigate: (s: Section) =>
                   setIsOpen(false);
                 }}
                 className={`block w-full text-left px-3 py-4 text-base font-medium ${activeSection === item.id
-                    ? 'bg-amber-50 text-amber-800'
-                    : 'text-stone-600 hover:bg-stone-50'
+                  ? 'bg-amber-50 text-amber-800'
+                  : 'text-stone-600 hover:bg-stone-50'
                   }`}
               >
                 {item.label}
@@ -147,7 +147,7 @@ const Hero: React.FC<{ onRead: () => void }> = ({ onRead }) => {
         <div className="relative">
           <div className="relative w-80 h-96 mx-auto lg:w-96 lg:h-[30rem] bg-stone-200 rounded-lg shadow-2xl rotate-3 border-8 border-white overflow-hidden sepia-[.3]">
             <img
-              src="/photo.png"
+              src="/photo.jpg"
               alt="Portrait de Théodore Girard"
               className="object-cover w-full h-full opacity-90 hover:scale-105 transition-transform duration-700"
             />
