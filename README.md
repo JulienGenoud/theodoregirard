@@ -1,20 +1,8 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
-</div>
+# Archives Théodore Girard
 
-# Run and deploy your AI Studio app
+Site de présentation du livre de notes et coupures de presse de Théodore Girard (1872-1918).
 
-This contains everything you need to run your app locally.
+## Déploiement
 
-View your app in AI Studio: https://ai.studio/apps/drive/1WhwhPAfBICbSkYkRHXh8ISsqD6J5JHeG
-
-## Run Locally
-
-**Prerequisites:**  Node.js
-
-
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+Ce projet est une application React simple (SPA). 
+Dernière mise à jour : Février 2026.

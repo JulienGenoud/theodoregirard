@@ -605,13 +605,38 @@ const Footer: React.FC = () => {
         <div>
           <h4 className="text-stone-200 font-serif text-lg mb-4">Archives Théodore Girard</h4>
           <p>Une initiative pour préserver la mémoire politique de la Troisième République.</p>
+          <div className="mt-4">
+            <a 
+              href="mailto:théo.girard17800@gmail.com" 
+              className="text-amber-500 hover:text-amber-400 transition-colors flex items-center gap-2"
+            >
+              ✉️ théo.girard17800@gmail.com
+            </a>
+          </div>
         </div>
         <div>
           <h4 className="text-stone-200 font-serif text-lg mb-4">Liens Utiles</h4>
           <ul className="space-y-2">
-            <li><a href="https://www.senat.fr" target="_blank" rel="noreferrer" className="hover:text-amber-500 transition-colors">Sénat.fr</a></li>
-            <li><a href="https://gallica.bnf.fr" target="_blank" rel="noreferrer" className="hover:text-amber-500 transition-colors">Bibliothèque Nationale (Gallica)</a></li>
-            <li><a href="#" className="hover:text-amber-500 transition-colors">Ville de Melle</a></li>
+            <li>
+              <a href="https://www.senat.fr/senateur-3eme-republique/girard_theodore1638r3.html" target="_blank" rel="noreferrer" className="hover:text-amber-500 transition-colors">
+                Sénat (Biographie)
+              </a>
+            </li>
+            <li>
+              <a href="https://www.senat.fr/table-nominative-archives/girard_theodore1638r3/3R/1918_1920.html" target="_blank" rel="noreferrer" className="hover:text-amber-500 transition-colors">
+                Sénat (Table Nominative 1918-1920)
+              </a>
+            </li>
+            <li>
+              <a href="https://cimetieresmellois.fr/MELLE%2079%20GIRARD%20THEODORE.html" target="_blank" rel="noreferrer" className="hover:text-amber-500 transition-colors">
+                Sépulture (Cimetières Mellois)
+              </a>
+            </li>
+            <li>
+              <a href="https://gallica.bnf.fr" target="_blank" rel="noreferrer" className="hover:text-amber-500 transition-colors">
+                Bibliothèque Nationale (Gallica)
+              </a>
+            </li>
           </ul>
         </div>
         <div>
