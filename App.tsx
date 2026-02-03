@@ -653,10 +653,10 @@ const Footer: React.FC = () => {
           <h4 className="text-stone-200 font-serif text-lg mb-4">Archives Théodore Girard</h4>
           <div className="mt-4">
             <a
-              href="mailto:théo.girard17800@gmail.com"
+              href="mailto:theogirard17800@gmail.com"
               className="text-amber-500 hover:text-amber-400 transition-colors flex items-center gap-2"
             >
-              ✉️ théo.girard17800@gmail.com
+              ✉️ theogirard17800@gmail.com
             </a>
           </div>
         </div>
