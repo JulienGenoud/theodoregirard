@@ -651,7 +651,6 @@ const Footer: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-8 text-sm">
         <div>
           <h4 className="text-stone-200 font-serif text-lg mb-4">Archives Théodore Girard</h4>
-          <p>Une initiative pour préserver la mémoire politique de la Troisième République.</p>
           <div className="mt-4">
             <a
               href="mailto:théo.girard17800@gmail.com"
