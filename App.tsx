@@ -20,7 +20,9 @@ import {
   Ban,
   TrendingUp,
   Coins,
-  Key
+  Key,
+  Volume2,
+  Headphones
 } from 'lucide-react';
 import {
   BIOGRAPHY_EVENTS,
@@ -35,7 +37,7 @@ import {
   EVOLUTION_ANALYSIS
 } from './constants';
 
-type Section = 'home' | 'bio' | 'context' | 'stories' | 'keys' | 'reader' | 'summary';
+type Section = 'home' | 'bio' | 'context' | 'stories' | 'keys' | 'audio' | 'reader' | 'summary';
 
 // --- Components ---
 
@@ -48,6 +50,7 @@ const Navigation: React.FC<{ activeSection: Section; onNavigate: (s: Section) =>
     { id: 'context', label: 'Contexte' },
     { id: 'stories', label: 'Histoires' },
     { id: 'keys', label: 'Clés de Lecture' },
+    { id: 'audio', label: 'Radio' },
     { id: 'reader', label: 'Le Livre' },
   ];
 
@@ -596,6 +599,57 @@ const Summary: React.FC<{ onGoToPage: (page: number) => void }> = ({ onGoToPage 
   );
 };
 
+const AudioSection: React.FC = () => {
+  return (
+    <section className="py-24 bg-stone-900 text-stone-100 relative overflow-hidden">
+      <div className="absolute inset-0 opacity-20 pointer-events-none" style={{ backgroundImage: 'url("https://www.transparenttextures.com/patterns/pinstriped-dark.png")' }}></div>
+
+      <div className="max-w-4xl mx-auto px-4 relative z-10">
+        <div className="text-center mb-12">
+          <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-amber-500/10 text-amber-500 mb-6 border border-amber-500/20">
+            <Volume2 size={32} />
+          </div>
+          <h2 className="text-4xl font-serif mb-4">Émission de Radio</h2>
+          <div className="w-24 h-1 bg-amber-500 mx-auto rounded-full mb-8"></div>
+          <p className="text-stone-400 font-serif text-xl italic max-w-2xl mx-auto">
+            "Théodore Girard : Une conscience de la République"
+          </p>
+        </div>
+
+        <div className="bg-stone-800/50 backdrop-blur-sm p-8 rounded-2xl border border-stone-700 shadow-2xl">
+          <div className="flex flex-col md:flex-row items-center gap-8">
+            <div className="w-32 h-32 flex-shrink-0 bg-stone-700 rounded-xl flex items-center justify-center text-amber-500 shadow-inner">
+              <Headphones size={64} strokeWidth={1.5} />
+            </div>
+
+            <div className="flex-1 text-center md:text-left">
+              <h3 className="text-2xl font-serif text-white mb-2">Accor Poitiers</h3>
+              <p className="text-amber-500 font-medium mb-4 uppercase tracking-widest text-sm">Par Dominique Breillat</p>
+              <p className="text-stone-300 text-sm leading-relaxed mb-6">
+                Dominique Breillat, professeur émérite de droit public, retrace le parcours exceptionnel de Théodore Girard, de ses débuts journalistiques à ses responsabilités ministérielles.
+              </p>
+
+              <div className="bg-stone-900/80 p-4 rounded-xl border border-stone-700 shadow-inner">
+                <audio
+                  controls
+                  className="w-full h-10 accent-amber-500"
+                  src="/audio.mp3"
+                >
+                  Votre navigateur ne supporte pas l'élément audio.
+                </audio>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div className="mt-12 text-center text-stone-500 text-xs italic">
+          Archives sonores — Dominique Breillat © Radio Accor Poitiers
+        </div>
+      </div>
+    </section>
+  );
+};
+
 const Footer: React.FC = () => {
   return (
     <footer className="bg-stone-900 text-stone-400 py-12 border-t border-stone-800">
@@ -692,6 +746,10 @@ const App: React.FC = () => {
 
       <div id="keys">
         <KeysSection />
+      </div>
+
+      <div id="audio">
+        <AudioSection />
       </div>
 
       <div id="analysis">
