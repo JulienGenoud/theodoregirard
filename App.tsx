@@ -148,13 +148,13 @@ const Hero: React.FC<{ onRead: () => void }> = ({ onRead }) => {
         </div>
 
         <div className="relative">
-          <div className="relative w-80 h-96 mx-auto lg:w-96 lg:h-[30rem] bg-stone-200 rounded-lg shadow-2xl rotate-3 border-8 border-white overflow-hidden sepia-[.3]">
+          <div className="relative w-80 h-80 mx-auto lg:w-[30rem] lg:h-[30rem] bg-stone-200 rounded-full shadow-2xl border-8 border-white overflow-hidden sepia-[.2]">
             <img
               src="./photo.jpg"
               alt="Portrait de Théodore Girard"
               className="object-cover w-full h-full opacity-90 hover:scale-105 transition-transform duration-700"
             />
-            <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 to-transparent p-6">
+            <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/40 to-transparent p-8">
               <p className="text-white font-serif italic text-lg text-center">"Sénateur des Deux-Sèvres"</p>
             </div>
           </div>
