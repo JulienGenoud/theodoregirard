@@ -150,7 +150,7 @@ const Hero: React.FC<{ onRead: () => void }> = ({ onRead }) => {
         <div className="relative">
           <div className="relative w-80 h-96 mx-auto lg:w-96 lg:h-[30rem] bg-stone-200 rounded-lg shadow-2xl rotate-3 border-8 border-white overflow-hidden sepia-[.3]">
             <img
-              src="/photo.jpg"
+              src="./photo.jpg"
               alt="Portrait de Théodore Girard"
               className="object-cover w-full h-full opacity-90 hover:scale-105 transition-transform duration-700"
             />
@@ -633,7 +633,7 @@ const AudioSection: React.FC = () => {
                 <audio
                   controls
                   className="w-full h-10 accent-amber-500"
-                  src="/audio.mp3"
+                  src="./audio.mp3"
                 >
                   Votre navigateur ne supporte pas l'élément audio.
                 </audio>
