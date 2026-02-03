@@ -389,10 +389,10 @@ const BookReader: React.FC<{ currentPageIndex: number; setCurrentPageIndex: (p: 
 
   // Safety check: ensure we have pages
   const totalPages = BOOK_PAGES_IDS.length;
-  const currentId = BOOK_PAGES_IDS[currentPageIndex];
+  const currentFileName = BOOK_PAGES_IDS[currentPageIndex];
 
-  // Google Drive Preview URL
-  const embedUrl = `https://drive.google.com/file/d/${currentId}/preview`;
+  // Local PDF URL (from public folder)
+  const pdfUrl = `./${currentFileName}`;
 
   // Handlers
   const handlePrev = () => {
@@ -512,11 +512,11 @@ const BookReader: React.FC<{ currentPageIndex: number; setCurrentPageIndex: (p: 
           </button>
 
           <a
-            href={`https://drive.google.com/file/d/${currentId}/view`}
+            href={pdfUrl}
             target="_blank"
             rel="noopener noreferrer"
             className="p-2 hover:bg-stone-700 rounded text-stone-400 hover:text-white flex items-center gap-2 text-xs"
-            title="Ouvrir dans Google Drive"
+            title="Ouvrir le PDF"
           >
             <ExternalLink size={20} />
           </a>
@@ -527,20 +527,14 @@ const BookReader: React.FC<{ currentPageIndex: number; setCurrentPageIndex: (p: 
       <div className={viewerContainerClasses}>
         <div className={`relative w-full ${isFullScreen ? 'h-full' : 'bg-white shadow-[0_20px_50px_rgba(0,0,0,0.3)] border border-stone-300 rounded-sm overflow-hidden'}`} style={!isFullScreen ? { minHeight: '80vh' } : {}}>
 
-          {/* Iframe Loading State - Only show if not full screen or handled better */}
-          {!isFullScreen && (
-            <div className="absolute inset-0 flex items-center justify-center z-0 bg-stone-100">
-              <div className="animate-spin rounded-full h-12 w-12 border-4 border-stone-300 border-t-amber-700"></div>
-            </div>
-          )}
+          {/* Loading state can be simplified since local files are faster */}
 
           {/* The Viewer */}
           <iframe
-            key={currentId} // Force reload on ID change
-            src={embedUrl}
+            key={currentFileName} // Force reload on filename change
+            src={pdfUrl}
             className={iframeClasses}
             title={`Page ${currentPageIndex + 1}`}
-            allow="autoplay; fullscreen"
           ></iframe>
 
           {/* Navigation Overlay (for easy clicking) */}
@@ -548,6 +542,7 @@ const BookReader: React.FC<{ currentPageIndex: number; setCurrentPageIndex: (p: 
           <div className="absolute top-0 bottom-0 right-0 w-12 hover:bg-black/5 z-20 cursor-pointer hidden md:block" onClick={handleNext} title="Suivant"></div>
         </div>
       </div>
+
 
       {!isFullScreen && (
         <p className="mt-6 text-stone-500 text-xs text-center max-w-md font-sans">
