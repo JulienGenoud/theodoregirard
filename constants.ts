@@ -1,7 +1,6 @@
 
 export const APP_TITLE = "Archives Girard : La Forge d'un Républicain (1872-1918)";
 
-// Liste complète des pages triées de 1 à 146
 // Liste complète des pages triées de 1 à 146 (fichiers PDF locaux dans /public)
 export const BOOK_PAGES_IDS = Array.from({ length: 146 }, (_, i) => `${i + 1}.pdf`);
 

@@ -687,7 +687,7 @@ const Footer: React.FC = () => {
         </div>
         <div>
           <h4 className="text-stone-200 font-serif text-lg mb-4">Crédits</h4>
-          <p>Développé avec React & Google Drive Embed.</p>
+          <p>Développé avec React & PDF Viewer.</p>
           <p className="mt-2 text-stone-600">© 2026 - Domaine Public</p>
         </div>
       </div>
