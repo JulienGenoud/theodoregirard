@@ -623,7 +623,7 @@ const AudioSection: React.FC = () => {
             </div>
 
             <div className="flex-1 text-center md:text-left">
-              <h3 className="text-2xl font-serif text-white mb-2">Accor Poitiers</h3>
+              <h3 className="text-2xl font-serif text-white mb-2">Radio Accords Poitiers</h3>
               <p className="text-amber-500 font-medium mb-4 uppercase tracking-widest text-sm">Par Dominique Breillat</p>
               <p className="text-stone-300 text-sm leading-relaxed mb-6">
                 Dominique Breillat, professeur émérite de droit public, retrace le parcours exceptionnel de Théodore Girard, de ses débuts journalistiques à ses responsabilités ministérielles.
@@ -643,7 +643,7 @@ const AudioSection: React.FC = () => {
         </div>
 
         <div className="mt-12 text-center text-stone-500 text-xs italic">
-          Archives sonores — Dominique Breillat © Radio Accor Poitiers
+          Archives sonores — Dominique Breillat © Radio Accords Poitiers
         </div>
       </div>
     </section>
