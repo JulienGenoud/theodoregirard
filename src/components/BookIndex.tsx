@@ -14,7 +14,7 @@ export default function BookIndex({ currentPage, onOpenPage }: BookIndexProps) {
         <div className="mb-12 text-center">
           <h2 id="index-titre" className="mb-4 flex items-center justify-center gap-3 font-serif text-3xl text-stone-900 sm:text-4xl">
             <List className="text-amber-700" size={32} aria-hidden="true" />
-            Index du livre
+            Index du recueil
           </h2>
           <div className="mx-auto mb-6 h-1 w-24 rounded-full bg-amber-700" aria-hidden="true" />
           <p className="mx-auto max-w-2xl font-serif italic text-stone-700">

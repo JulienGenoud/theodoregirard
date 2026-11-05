@@ -57,7 +57,7 @@ export default function Stories({ onOpenPage }: StoriesProps) {
                   onClick={plainClick(() => onOpenPage(story.pageRef))}
                   className="mt-auto inline-flex items-center justify-center gap-2 pt-5 text-sm font-semibold text-amber-800 hover:text-amber-900 hover:underline"
                 >
-                  Voir la page {story.pageRef} du livre
+                  Voir la page {story.pageRef} du recueil
                   <ArrowRight size={16} aria-hidden="true" />
                 </a>
               </article>

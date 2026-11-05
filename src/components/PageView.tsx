@@ -155,7 +155,7 @@ export default function PageView({ page, textHtml }: { page: number; textHtml?: 
                 <BookOpen size={16} aria-hidden="true" /> Feuilleter dans le lecteur
               </a>
               <a href="/#index" className="inline-flex items-center gap-1.5 text-amber-800 underline-offset-4 hover:underline">
-                <List size={16} aria-hidden="true" /> Index du livre
+                <List size={16} aria-hidden="true" /> Index du recueil
               </a>
             </figcaption>
           </figure>

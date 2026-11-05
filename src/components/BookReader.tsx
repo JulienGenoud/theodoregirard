@@ -329,7 +329,7 @@ export default function BookReader({ page, onPageChange, isActive }: BookReaderP
                 </a>
                 {!isFullscreen && (
                   <a href="#index" className={linkClass(false)}>
-                    <List size={15} aria-hidden="true" /> Index du livre
+                    <List size={15} aria-hidden="true" /> Index du recueil
                   </a>
                 )}
               </span>

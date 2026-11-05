@@ -33,7 +33,7 @@ export const BIO_SUMMARY =
   "Né en Charente-Inférieure en 1851, Théodore Girard y collabore jeune aux journaux républicains de Saintes ; installé comme avoué à Melle à la fin de 1876, il fait ensuite carrière dans les Deux-Sèvres, dont il devient sénateur en 1895.";
 
 export const BIO_INTRO =
-  "Théodore Girard (Montils, 14 janvier 1851 – Paris, 13 octobre 1918) fut avoué, maire de Melle à partir de 1884, sénateur des Deux-Sèvres de 1895 à sa mort, et garde des Sceaux, ministre de la Justice, dans le deuxième gouvernement Aristide Briand (1910-1911).";
+  "Théodore Girard (Montils, 14 janvier 1851 – Paris, 13 octobre 1918) fut avoué, maire de Melle (à partir de 1884 selon le Sénat, 1885 selon la radio), sénateur des Deux-Sèvres de 1895 à sa mort, et garde des Sceaux, ministre de la Justice, dans le deuxième gouvernement Aristide Briand (1910-1911).";
 
 export interface TimelineEvent {
   year: string;
@@ -61,21 +61,21 @@ export const BIOGRAPHY_EVENTS: TimelineEvent[] = [
     year: '1876',
     title: 'Avoué à Melle',
     description:
-      'Installé comme avoué à Melle fin décembre 1876, puis juge suppléant au tribunal civil, il entre en 1878 au conseil municipal et devient adjoint au maire.',
+      "Installé comme avoué à Melle fin décembre 1876 (le 23 décembre selon l'arbre familial, p. 146), puis juge suppléant au tribunal civil, il entre au conseil municipal et devient adjoint au maire (en 1878 selon le dictionnaire Jolly, ou nommé le 9 février 1881 d'après la p. 146).",
     period: 'statesman',
   },
   {
     year: '1884',
     title: 'Maire de Melle',
     description:
-      "Maire de Melle à partir de 1884, il le reste « pendant plus de vingt ans », écrit Le Mémorial des Deux-Sèvres en 1911, puis retrouve la mairie, qu'il occupe encore à sa mort.",
+      "Maire de Melle à partir de 1884 selon la biographie du Sénat (ou 1885 selon l'émission radio, après le décès de Clément de Reignié), il le reste « pendant plus de vingt ans », écrit Le Mémorial des Deux-Sèvres en 1911 (jusqu'en 1908 selon la p. 146, 1909 selon Wikipédia), puis retrouve la mairie (en 1913 selon Wikipédia, source non corroborée), qu'il occupe encore à sa mort.",
     period: 'statesman',
   },
   {
     year: '1895',
     title: 'Sénateur des Deux-Sèvres',
     description:
-      "Élu sénateur le 24 février 1895, après la mort de Jean Macé, sénateur inamovible, par 513 voix sur 776 votants, réélu en 1900 et 1909, il siège jusqu'à sa mort, inscrit au groupe de l'Union républicaine. Il est secrétaire du Sénat (1902-1905) et, à plusieurs reprises, questeur.",
+      "Élu sénateur le 24 février 1895, après la mort de Jean Macé, sénateur inamovible, par 513 voix sur 776 votants, réélu en 1900 et 1909, il siège jusqu'à sa mort, inscrit au groupe de l'Union républicaine. Il est secrétaire du Sénat (1902-1905) et, à plusieurs reprises, questeur (en 1903 selon Jolly, 1908 selon la radio et la p. 146, puis 1909-1910 et de 1914 à 1918).",
     period: 'statesman',
   },
   {
