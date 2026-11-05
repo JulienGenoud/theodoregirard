@@ -1,7 +1,7 @@
 import type { MouseEvent } from 'react';
 
 /**
- * Intercepte un clic « simple » sur un lien (bouton gauche, sans touche de
+ * Intercepte un clic « simple » sur un lien (bouton gauche, sans touche de
  * modification) pour le traiter dans la page ; Ctrl/Cmd/Maj-clic et clic du
  * milieu gardent le comportement normal du lien (ouverture dans un onglet…).
  */

@@ -62,7 +62,7 @@ export default function BookReader({ page, onPageChange, isActive }: BookReaderP
   const previous = useCallback(() => goTo(page - 1), [goTo, page]);
   const next = useCallback(() => goTo(page + 1), [goTo, page]);
 
-  // Garde le champ « Page » synchronisé avec la page affichée.
+  // Garde le champ « Page » synchronisé avec la page affichée.
   useEffect(() => setDraft(String(page)), [page]);
 
   // Flèches du clavier (quand le lecteur est à l'écran) et Échap en plein écran simulé.
@@ -72,6 +72,23 @@ export default function BookReader({ page, onPageChange, isActive }: BookReaderP
       if (event.defaultPrevented || event.altKey || event.ctrlKey || event.metaKey) return;
       if (event.key === 'Escape' && emulatedFullscreen) {
         setEmulatedFullscreen(false);
+        return;
+      }
+      // Plein écran simulé : le focus reste dans le lecteur (Tab / Maj+Tab).
+      if (event.key === 'Tab' && emulatedFullscreen && containerRef.current) {
+        const items = [...containerRef.current.querySelectorAll<HTMLElement>('a[href], button:not([disabled]), input')];
+        if (items.length) {
+          const first = items[0];
+          const last = items[items.length - 1];
+          const inside = containerRef.current.contains(document.activeElement);
+          if (!inside || (event.shiftKey && document.activeElement === first)) {
+            event.preventDefault();
+            (event.shiftKey ? last : first).focus();
+          } else if (!event.shiftKey && document.activeElement === last) {
+            event.preventDefault();
+            first.focus();
+          }
+        }
         return;
       }
       if (event.shiftKey || isTypingTarget(event.target)) return;
@@ -89,7 +106,10 @@ export default function BookReader({ page, onPageChange, isActive }: BookReaderP
 
   // Suit l'état du plein écran natif (Échap, geste système…).
   useEffect(() => {
-    const onChange = () => setNativeFullscreen(document.fullscreenElement === containerRef.current);
+    const onChange = () => {
+      setNativeFullscreen(document.fullscreenElement === containerRef.current);
+      setEmulatedFullscreen(false);
+    };
     document.addEventListener('fullscreenchange', onChange);
     return () => document.removeEventListener('fullscreenchange', onChange);
   }, []);
@@ -129,10 +149,14 @@ export default function BookReader({ page, onPageChange, isActive }: BookReaderP
       const fallback = window.setTimeout(() => {
         if (document.fullscreenElement !== el) setEmulatedFullscreen(true);
       }, 600);
-      el.requestFullscreen().catch(() => {
-        window.clearTimeout(fallback);
-        setEmulatedFullscreen(true);
-      });
+      el.requestFullscreen()
+        .then(() => {
+          if (document.fullscreenElement === el) window.clearTimeout(fallback);
+        })
+        .catch(() => {
+          window.clearTimeout(fallback);
+          setEmulatedFullscreen(true);
+        });
     } else {
       setEmulatedFullscreen(true);
     }
@@ -195,6 +219,9 @@ export default function BookReader({ page, onPageChange, isActive }: BookReaderP
 
         <div
           ref={containerRef}
+          role={emulatedFullscreen ? 'dialog' : undefined}
+          aria-modal={emulatedFullscreen || undefined}
+          aria-label={emulatedFullscreen ? 'Lecteur du Livre de combat en plein écran' : undefined}
           className={isFullscreen ? 'fixed inset-0 z-[60] overflow-y-auto bg-stone-950 pb-10' : 'relative'}
         >
           <div
@@ -204,7 +231,7 @@ export default function BookReader({ page, onPageChange, isActive }: BookReaderP
               <button type="button" onClick={previous} disabled={page === 1} aria-label="Page précédente" className={iconButton}>
                 <ChevronLeft size={22} aria-hidden="true" />
               </button>
-              <form onSubmit={onSubmit} className="flex items-center gap-2 font-mono text-sm">
+              <form onSubmit={onSubmit} noValidate className="flex items-center gap-2 font-mono text-sm">
                 <label htmlFor="numero-page">Page</label>
                 <input
                   id="numero-page"
@@ -234,7 +261,8 @@ export default function BookReader({ page, onPageChange, isActive }: BookReaderP
                 type="button"
                 onClick={toggleFullscreen}
                 aria-pressed={isFullscreen}
-                aria-label={isFullscreen ? 'Quitter le plein écran' : 'Lire en plein écran'}
+                aria-label="Plein écran"
+                title={isFullscreen ? 'Quitter le plein écran' : 'Lire en plein écran'}
                 className={iconButton}
               >
                 {isFullscreen ? <Minimize size={20} aria-hidden="true" /> : <Maximize size={20} aria-hidden="true" />}
@@ -257,7 +285,10 @@ export default function BookReader({ page, onPageChange, isActive }: BookReaderP
                 alt={pageAlt(page)}
                 loading="lazy"
                 decoding="async"
-                onLoad={() => setLoadedPage(page)}
+                onLoad={() => {
+                  setLoadedPage(page);
+                  setFailedPage((failed) => (failed === page ? null : failed));
+                }}
                 onError={() => setFailedPage(page)}
                 className={`block h-auto w-full transition-opacity duration-300 ${isLoading ? 'opacity-40' : 'opacity-100'}`}
               />

@@ -30,7 +30,7 @@ export default function Biography() {
                     event.period === 'roots' ? 'text-amber-800' : 'text-stone-600'
                   }`}
                 >
-                  {event.period === 'roots' ? 'RACINES & MILITANTISME' : "HOMME D'ÉTAT"} • <time>{event.year}</time>
+                  {event.period === 'roots' ? 'RACINES & MILITANTISME' : "HOMME D'ÉTAT"} • {/^\d{4}$/.test(event.year) ? <time dateTime={event.year}>{event.year}</time> : <span>{event.year}</span>}
                 </p>
                 <h3 className="mb-2 mt-1 font-serif text-xl font-bold text-stone-800">{event.title}</h3>
                 <p className="font-serif italic leading-relaxed text-stone-600">{event.description}</p>

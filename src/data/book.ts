@@ -8,11 +8,12 @@ export interface PageInfo {
   h: number;
 }
 
-/** Scans du « Livre de combat », générés par scripts/build-pages.sh. */
+/** Scans du « Livre de combat », générés par scripts/build-pages.sh. */
 export const PAGES: readonly PageInfo[] = pages;
 export const TOTAL_PAGES = PAGES.length;
 
 export const PAGE_SIZES = '(min-width: 1024px) 56rem, 100vw';
+export const PAGE_VIEW_SIZES = '(min-width: 1024px) 60rem, calc(100vw - 2rem)';
 
 export const clampPage = (n: number): number => Math.min(Math.max(Math.round(n) || 1, 1), TOTAL_PAGES);
 
@@ -47,7 +48,7 @@ export interface TocSection {
 
 /**
  * Table des matières établie d'après la table manuscrite de Théodore Girard
- * (scans p. 133-139, signée « Th. Girard »). Les documents des pages 125 à 146,
+ * (scans p. 133-139, signée « Th. Girard »). Les documents des pages 125 à 146,
  * absents de sa table, sont décrits d'après les scans.
  */
 export const TOC_SECTIONS: readonly TocSection[] = [
@@ -55,7 +56,7 @@ export const TOC_SECTIONS: readonly TocSection[] = [
     id: 'independant',
     title: "L'Indépendant",
     period: '1872-1874',
-    description: "Coupures du journal L'Indépendant, dont les premiers articles et les « réponses » de Théodore Girard.",
+    description: "Coupures du journal L'Indépendant, dont les premiers articles et les « réponses » de Théodore Girard.",
     entries: [
       { page: 1, title: 'Théâtre – Marie Tudor' },
       { page: 2, title: 'Théâtre – Les Enfers de Paris' },
@@ -74,7 +75,7 @@ export const TOC_SECTIONS: readonly TocSection[] = [
       { page: 14, title: 'Le mot du révérend' },
       { page: 15, title: 'La démission de M. Grévy' },
       { page: 16, title: 'Les élections de la Charente-Inférieure' },
-      { page: 17, title: "Le vol de l'hôtel Liguès à Saintes", uncertain: true },
+      { page: 17, title: "Le vol de l'hôtel Vigier à Saintes", uncertain: true },
       { page: 18, title: 'Pour un fait personnel' },
       { page: 19, title: 'Ma réponse' },
       { page: 20, title: 'Les troubles de Charleville' },
@@ -91,7 +92,7 @@ export const TOC_SECTIONS: readonly TocSection[] = [
       { page: 30, title: 'Zigzags' },
       { page: 31, title: 'Zigzags' },
       { page: 33, title: 'La révocation de M. Drouin' },
-      { page: 34, title: 'Réponse du journal des Charentes' },
+      { page: 34, title: 'Réponse du Journal des Charentes' },
       { page: 35, title: 'Incident Planat' },
       { page: 36, title: 'Ma lettre à ce sujet' },
       { page: 38, title: 'Réponse Planat' },
@@ -102,7 +103,7 @@ export const TOC_SECTIONS: readonly TocSection[] = [
       { page: 42, title: 'Causerie – La procession aux flambeaux' },
       { page: 43, title: 'Un tour de force préfectoral' },
       { page: 44, title: 'Ce qui fut, ce qui est, ce qui sera' },
-      { page: 45, title: 'Lettre Loula du Progrès', uncertain: true },
+      { page: 44, title: 'Lettre Lonla du Progrès' },
       { page: 45, title: 'Les professions de foi bonapartistes' },
       { page: 46, title: 'Le triomphe des honnêtes gens' },
       { page: 47, title: 'Causerie – La délibération municipale de Thénac' },
@@ -122,7 +123,7 @@ export const TOC_SECTIONS: readonly TocSection[] = [
     title: "L'Union républicaine",
     period: '1875-1876',
     description:
-      "Coupures de L'Union républicaine (Saintes) : la querelle du « capucin », les causeries d'Arthur Lanlair, les polémiques avec la presse bonapartiste et cléricale.",
+      "Coupures de L'Union républicaine (Saintes) : la querelle du « capucin », les causeries d'Arthur Lanlair, les polémiques avec la presse bonapartiste et cléricale.",
     entries: [
       { page: 55, title: 'Un exorcisme' },
       { page: 56, title: 'Un regard au-delà des Pyrénées' },
@@ -132,11 +133,11 @@ export const TOC_SECTIONS: readonly TocSection[] = [
       { page: 58, title: 'La Chose en police correctionnelle' },
       { page: 60, title: 'Du drame !' },
       { page: 61, title: 'La fin du carnaval' },
-      { page: 61, title: "Le capucin de l'… [mot illisible]", uncertain: true },
+      { page: 61, title: 'Le capucin de Saint-Pierre' },
       { page: 62, title: "L'Union républicaine à Cognac" },
       { page: 63, title: "Lettre d'une dévote" },
       { page: 64, title: 'Ma réponse au capucin' },
-      { page: 65, title: 'Deuxième lettre de la dévote', uncertain: true },
+      { page: 65, title: 'Lettre deuxième de la dévote' },
       { page: 66, title: "L'œuvre du Saint-Viatique" },
       { page: 67, title: 'Le capucin ne va pas mieux !' },
       { page: 67, title: 'Le capucin' },
@@ -182,10 +183,10 @@ export const TOC_SECTIONS: readonly TocSection[] = [
       { page: 103, title: 'À qui la palme ?' },
       { page: 104, title: 'Allez, allez, ô jeunes filles' },
       { page: 104, title: 'La candidature de Cadoret' },
-      { page: 105, title: 'Le coup de pied de … [nom illisible]', uncertain: true },
+      { page: 105, title: 'Le coup de pied de Thèze' },
       { page: 106, title: 'Gambades du suffrage universel' },
       { page: 107, title: 'Les exercices du capucin' },
-      { page: 108, title: 'Le procès des landes de Madion' },
+      { page: 107, title: 'Le procès des landes de Madion' },
       { page: 109, title: 'Théâtre – La Vie de bohème' },
       { page: 110, title: 'Théâtre – Le Pauvre Idiot' },
       { page: 111, title: 'Théâtre – Don César de Bazan' },
@@ -215,13 +216,13 @@ export const TOC_SECTIONS: readonly TocSection[] = [
       { page: 124, title: 'Les violettes napoléoniennes' },
       { page: 125, title: 'À la rédaction du Rappel charentais (coupure)' },
       { page: 126, title: "Discours manuscrit à la distribution des prix de l'école communale de Melle (24 août 1880)" },
-      { page: 129, title: 'Discours manuscrit « de l\'année 1880 » (distribution des prix)' },
-      { page: 133, title: 'Table manuscrite du recueil, signée « Th. Girard » (p. 133-139)' },
+      { page: 129, title: 'Discours manuscrit « de l\'année 1880 » (distribution des prix)' },
+      { page: 133, title: 'Table manuscrite du recueil, signée « Th. Girard » (p. 133-139)' },
       { page: 140, title: 'Note manuscrite postérieure', uncertain: true },
       { page: 141, title: 'Notice du Dictionnaire des parlementaires français 1889-1940 (Jean Jolly), photocopie' },
-      { page: 142, title: 'Coupure « L\'École et le Socialisme », signée Georges Girard (années 1920)', uncertain: true },
+      { page: 142, title: 'Coupure « L\'École et le Socialisme », signée Georges Girard (années 1920)', uncertain: true },
       { page: 143, title: 'Le Mémorial des Deux-Sèvres du jeudi 9 février 1899 (une)' },
-      { page: 144, title: '« Nos compatriotes » : portrait de Théodore Girard paru dans Le Figaro (janvier 1899), suite p. 145' },
+      { page: 144, title: '« Nos compatriotes » : portrait de Théodore Girard paru dans Le Figaro (janvier 1899), suite p. 145' },
       { page: 146, title: 'Schéma manuscrit', uncertain: true },
     ],
   },
@@ -231,11 +232,11 @@ export const TABLE_OF_CONTENTS: readonly TocItem[] = TOC_SECTIONS.flatMap((secti
 
 /** Notes de lecture vérifiées sur les scans, affichées sur les pages concernées. */
 export const PAGE_NOTES: Readonly<Record<number, string>> = {
-  4: "Septembre 1872 : la circulaire de Victor Lefranc, ministre de l'Intérieur de Thiers, interdit « toutes manifestations, tous banquets » pour l'anniversaire du 4 Septembre.",
-  5: '« La peine de mort », article signé « TH. G. » et daté du 22 octobre 1872 (suite p. 6) : probablement le premier article de Théodore Girard.',
-  55: "« Un exorcisme » : le 24 décembre 1874, un curé de Saintes vient asperger d'eau bénite une maison qui avait servi de loge maçonnique.",
+  4: "Septembre 1872 : la circulaire de Victor Lefranc, ministre de l'Intérieur de Thiers, interdit « toutes manifestations, tous banquets » pour l'anniversaire du 4 Septembre.",
+  5: '« La peine de mort », article signé « TH. G. » et daté du 22 octobre 1872 (suite p. 6) : probablement le premier article de Théodore Girard.',
+  55: "« Un exorcisme » : le 24 décembre 1874, un curé de Saintes vient asperger d'eau bénite une maison qui avait servi de loge maçonnique.",
   68: 'Lettre du père Alexandre de Saint-Joseph, prédicateur du carême 1875, datée du presbytère de Saint-Pierre de Saintes, 9 mars 1875.',
-  124: "Juillet 1876 : le tribunal correctionnel de Saintes juge pour escroquerie Mouroux, ancien instituteur, qui exploitait la renommée des violettes du « Père la Violette ».",
+  124: "Juillet 1876 : le tribunal correctionnel de Saintes juge pour escroquerie Mouroux, ancien instituteur, qui exploitait la renommée des violettes du « Père la Violette ».",
   126: "Discours prononcé par Théodore Girard, adjoint au maire, au nom de l'administration municipale de Melle.",
   133: 'Table du recueil rédigée et signée par Théodore Girard (p. 133 à 139).',
   144: 'Portrait publié par Le Figaro quelques jours après le discours de Théodore Girard au Sénat du 19 janvier 1899 (suite p. 145).',

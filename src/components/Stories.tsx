@@ -44,7 +44,7 @@ export default function Stories({ onOpenPage }: StoriesProps) {
               </div>
               <article className="mt-8 flex flex-1 flex-col text-center">
                 <p className="font-serif text-sm italic text-stone-600">
-                  <time>{story.year}</time> • Page {story.pageRef}
+                  <time dateTime={story.year}>{story.year}</time> • Page {story.pageRef}
                 </p>
                 <h3 className="mb-4 mt-2 font-serif text-xl font-bold leading-tight text-stone-900">{story.title}</h3>
                 <p className="mb-4 text-left text-sm leading-relaxed text-stone-700">{story.content}</p>

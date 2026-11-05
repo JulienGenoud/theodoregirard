@@ -6,7 +6,7 @@ const PAGE_PATH = /^\/livre-de-combat\/page-(\d{1,3})\/?$/;
 
 /** Détermine la vue à afficher à partir du chemin de l'URL. */
 export function parseRoute(pathname: string): Route {
-  const match = PAGE_PATH.exec(pathname);
+  const match = PAGE_PATH.exec(pathname.replace(/\/index\.html$/, '/'));
   if (match) {
     const page = Number(match[1]);
     if (page >= 1 && page <= TOTAL_PAGES) return { kind: 'page', page };

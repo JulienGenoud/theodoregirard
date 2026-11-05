@@ -29,7 +29,12 @@ export default function HomePage() {
   // Liens profonds : #page-12 ouvre la page 12 dans le lecteur ; les anciennes ancres sont redirigées.
   useEffect(() => {
     const applyHash = () => {
-      const hash = decodeURIComponent(window.location.hash.slice(1));
+      let hash = window.location.hash.slice(1);
+      try {
+        hash = decodeURIComponent(hash);
+      } catch {
+        // Ancre mal formée (%xx invalide) : on la garde telle quelle.
+      }
       const match = PAGE_HASH.exec(hash);
       if (match) {
         setPage(clampPage(Number(match[1])));
@@ -53,7 +58,7 @@ export default function HomePage() {
     window.history.replaceState(null, '', `#page-${next}`);
   }, []);
 
-  // Liens « page N » ailleurs sur la page (index, histoires) : ouverture dans le lecteur.
+  // Liens « page N » ailleurs sur la page (index, histoires) : ouverture dans le lecteur.
   const openPage = useCallback((target: number) => {
     const next = clampPage(target);
     const hash = `#page-${next}`;

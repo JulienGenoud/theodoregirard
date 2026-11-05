@@ -8,7 +8,7 @@ export default function Footer() {
         <div>
           <h2 className="mb-4 font-serif text-lg text-stone-100">Archives Théodore Girard</h2>
           <p className="leading-relaxed">
-            Site consacré à Théodore Girard (1851-1918) et à son « Livre de combat » (1872-1876).
+            Site consacré à Théodore Girard (1851-1918) et à son « Livre de combat » (1872-1876).
           </p>
           <a
             href={`mailto:${CONTACT_EMAIL}`}
@@ -44,7 +44,7 @@ export default function Footer() {
         <div>
           <h2 className="mb-4 font-serif text-lg text-stone-100">Crédits &amp; mentions légales</h2>
           <p className="leading-relaxed">
-            Documents d'archives (1872-1899) : domaine public. Portrait : Théodore Girard vers 1915, collection de la
+            Coupures et manuscrits (1872-1899) : domaine public ; p. 141 (notice du dictionnaire Jolly) et p. 142 (coupure des années 1920) : droits réservés. Portrait : Théodore Girard vers 1915, collection de la
             famille Girard (Wikimedia Commons). Émission radio : © Radio Accords Poitiers, Dominique Breillat.
           </p>
           <p className="mt-2 leading-relaxed">

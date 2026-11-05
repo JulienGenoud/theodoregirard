@@ -24,7 +24,7 @@ for (const urlPath of ALL_PATHS) {
   if (!html.includes('<h1') || !head.includes('<title>')) {
     throw new Error(`Pré-rendu incomplet pour ${urlPath}`);
   }
-  const page = template.replace('<!--app-head-->', head).replace('<!--app-html-->', html);
+  const page = template.replace('<!--app-head-->', () => head).replace('<!--app-html-->', () => html);
   const outDir = path.join(dist, urlPath);
   await mkdir(outDir, { recursive: true });
   await writeFile(path.join(outDir, 'index.html'), page);

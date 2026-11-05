@@ -25,8 +25,15 @@ const escapeHtml = (value: string): string =>
 const jsonLd = (data: unknown): string =>
   `<script type="application/ld+json">${JSON.stringify(data).replace(/</g, '\\u003c')}</script>`;
 
-const truncate = (text: string, max: number): string =>
-  text.length <= max ? text : `${text.slice(0, max - 1).replace(/[\s,;:–-]+\S*$/, '')}…`;
+const truncate = (text: string, max: number): string => {
+  if (text.length <= max) return text;
+  let cut = text.slice(0, max - 1).replace(/[\s,;:–-]+\S*$/, '');
+  // Pas de parenthèse ni de guillemet laissés ouverts.
+  for (const [open, close] of [['(', ')'], ['«', '»'], ['[', ']']]) {
+    if (cut.split(open).length > cut.split(close).length) cut = cut.slice(0, cut.lastIndexOf(open)).trimEnd();
+  }
+  return `${cut}…`;
+};
 
 interface HeadData {
   title: string;
@@ -83,7 +90,7 @@ const BOOK = {
 function homeHead(): HeadData {
   const title = 'Théodore Girard (1851-1918) – Archives et Livre de combat';
   const description =
-    'Théodore Girard (1851-1918), maire de Melle, sénateur des Deux-Sèvres et garde des Sceaux : biographie et son « Livre de combat » (1872-1876) à feuilleter.';
+    'Théodore Girard (1851-1918), maire de Melle, sénateur des Deux-Sèvres et garde des Sceaux : biographie et son « Livre de combat » (1872-1876) à feuilleter.';
   return {
     title,
     description,
@@ -145,8 +152,8 @@ function pageHead(n: number): HeadData {
   const path = pageUrl(n);
 
   const title = titles.length
-    ? `${truncate(titles[0], 60)} – Livre de combat de Théodore Girard, p. ${n}`
-    : `Livre de combat de Théodore Girard (1872-1876) – page ${n}`;
+    ? `${truncate(titles[0], 42)} – Livre de combat, p. ${n}`
+    : `Livre de combat de Théodore Girard – page ${n}`;
   const note = PAGE_NOTES[n];
   const description = truncate(
     note

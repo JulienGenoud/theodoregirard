@@ -8,7 +8,7 @@ export const CONTACT_EMAIL = 'theogirard17800@gmail.com';
 export const HERO = {
   badge: 'Livre de combat · 1872-1876',
   lifespan: '1851-1918',
-  lead: "Des tranchées de la presse charentaise aux ors du ministère de la Justice : découvrez comment un jeune républicain anticlérical, acteur de la « guerre des journaux » saintongeaise, est devenu sénateur des Deux-Sèvres et garde des Sceaux de la Troisième République.",
+  lead: "Des tranchées de la presse charentaise aux ors du ministère de la Justice : découvrez comment un jeune républicain anticlérical, acteur de la « guerre des journaux » saintongeaise, est devenu sénateur des Deux-Sèvres et garde des Sceaux de la Troisième République.",
   caption: 'Sénateur des Deux-Sèvres',
 };
 
@@ -44,7 +44,7 @@ export const BIOGRAPHY_EVENTS: TimelineEvent[] = [
     year: '1872-1876',
     title: 'La guerre des plumes',
     description:
-      "Jeune républicain, il rassemble dans un recueil – baptisé ici « Livre de combat » – les coupures de L'Indépendant puis de L'Union républicaine, dont ses propres articles, et en dresse lui-même la table, qu'il signe.",
+      "Jeune républicain, il rassemble dans un recueil – baptisé ici « Livre de combat » – les coupures de L'Indépendant puis de L'Union républicaine, dont ses propres articles, et en dresse lui-même la table, qu'il signe.",
     period: 'roots',
   },
   {
@@ -58,7 +58,7 @@ export const BIOGRAPHY_EVENTS: TimelineEvent[] = [
     year: '1884',
     title: 'Maire de Melle',
     description:
-      "Maire de Melle de 1884 à 1909, puis de nouveau de 1913 à sa mort. Adjoint, il avait salué en 1880 le vote par le conseil municipal de « la gratuité absolue de l'enseignement primaire ».",
+      "Maire de Melle de 1884 à 1909, puis de nouveau de 1913 à sa mort. Adjoint, il avait salué en 1880 le vote par le conseil municipal de « la gratuité absolue de l'enseignement primaire ».",
     period: 'statesman',
   },
   {
@@ -72,7 +72,7 @@ export const BIOGRAPHY_EVENTS: TimelineEvent[] = [
     year: '1899',
     title: 'Une voix écoutée',
     description:
-      "Après son discours au Sénat du 19 janvier 1899 (interpellation sur l'affaire Picquart), Le Figaro, sous la plume d'un adversaire politique, décrit sa « parole vive, chaude, évidemment improvisée, l'accent d'un honnête homme qui se défend de songer à l'éloquence, et qui l'atteint sans y penser ».",
+      "Après son discours au Sénat du 19 janvier 1899 (interpellation sur l'affaire Picquart), Le Figaro, sous la plume d'un adversaire politique, décrit sa « parole vive, chaude, évidemment improvisée, l'accent d'un honnête homme qui se défend de songer à l'éloquence, et qui l'atteint sans y penser ».",
     period: 'statesman',
   },
   {
@@ -86,7 +86,7 @@ export const BIOGRAPHY_EVENTS: TimelineEvent[] = [
     year: '1918',
     title: 'Une fin soudaine',
     description:
-      "Renversé par un taxi boulevard Saint-Michel, il meurt à Paris le 13 octobre 1918. Il est inhumé à Montils, sa commune natale, le 17 octobre : « Ni discours, ni couronnes ».",
+      "Renversé par un taxi boulevard Saint-Michel, il meurt à Paris le 13 octobre 1918. Il est inhumé à Montils, sa commune natale, le 17 octobre : « Ni discours, ni couronnes ».",
     period: 'statesman',
   },
 ];
@@ -99,7 +99,7 @@ export const CONTEXT_INTRO = {
 export const CONTEXT_POINTS = [
   {
     title: "L'Ordre moral (1873-1876)",
-    text: "Sous la présidence de Mac Mahon, la France conservatrice tente de « rechristianiser » le pays. C'est contre cette alliance du sabre et du goupillon que ferraillent les journaux républicains rassemblés par le jeune Girard.",
+    text: "Sous la présidence de Mac Mahon, la France conservatrice tente de « rechristianiser » le pays. C'est contre cette alliance du sabre et du goupillon que ferraillent les journaux républicains rassemblés par le jeune Girard.",
   },
   {
     title: 'Le bastion bonapartiste',
@@ -107,7 +107,7 @@ export const CONTEXT_POINTS = [
   },
   {
     title: "L'école avant Jules Ferry",
-    text: "Avant même les lois Ferry (1881-1882), Girard, adjoint au maire de Melle, salue en 1880 le vote de « la gratuité absolue de l'enseignement primaire » et exhorte les élèves à devenir « des citoyens utiles, honnêtes, honorables ».",
+    text: "Avant même les lois Ferry (1881-1882), Girard, adjoint au maire de Melle, salue en 1880 le vote de « la gratuité absolue de l'enseignement primaire » et exhorte les élèves à devenir « des citoyens utiles, honnêtes, honorables ».",
   },
 ];
 
@@ -127,22 +127,22 @@ export interface Anecdote {
 
 export const ANECDOTES: Anecdote[] = [
   {
-    title: "L'affaire des « violettes napoléoniennes »",
+    title: "L'affaire des « violettes napoléoniennes »",
     year: '1876',
     pageRef: 124,
     icon: 'flower',
     content:
-      "Juillet 1876 : le tribunal correctionnel de Saintes juge pour escroquerie un certain Mouroux, ancien instituteur. Il prétendait acheter le secret du « Père la Violette », vieil horticulteur de Chaumet dont les violettes fleurissaient en toute saison et avaient fourni la couronne portée par les pèlerins bonapartistes aux « augustes exilés de Chislehurst ». Par voie d'annonces, il promettait de « couvrir l'Europe entière des violettes de Chislehurst » : quelque 2 400 personnes lui envoyèrent un franc.",
+      "Juillet 1876 : le tribunal correctionnel de Saintes juge pour escroquerie un certain Mouroux, ancien instituteur. Il prétendait acheter le secret du « Père la Violette », vieil horticulteur de Chaumet dont les violettes fleurissaient en toute saison et avaient fourni la couronne portée par les pèlerins bonapartistes aux « augustes exilés de Chislehurst ». Par voie d'annonces, il promettait de « couvrir l'Europe entière des violettes de Chislehurst » : quelque 2 400 personnes lui envoyèrent un franc.",
     analysis:
       "Plus qu'une ferveur naïve des campagnes, l'affaire montre l'exploitation commerciale du culte bonapartiste de la violette, emblème de la famille impériale.",
   },
   {
-    title: "Le « capucin » de l'insigne basilique",
+    title: "Le « capucin » de l'insigne basilique",
     year: '1875',
     pageRef: 61,
     icon: 'megaphone',
     content:
-      "Carême 1875 : prédicateur à la cathédrale Saint-Pierre de Saintes, le père Alexandre de Saint-Joseph – « le capucin » pour L'Union républicaine, qui note pourtant que « ce capucin est un carme » – tonne en chaire contre les libres-penseurs et les républicains. Arthur Lanlair lui répond de numéro en numéro, le journal publie des « lettres d'une dévote », et le père finit par écrire au rédacteur en chef (p. 61 à 68).",
+      "Carême 1875 : prédicateur à la cathédrale Saint-Pierre de Saintes, le père Alexandre de Saint-Joseph – « le capucin » pour L'Union républicaine, qui note pourtant que « ce capucin est un carme » – tonne en chaire contre les libres-penseurs et les républicains. Arthur Lanlair lui répond de numéro en numéro, le journal publie des « lettres d'une dévote », et le père finit par écrire au rédacteur en chef (p. 61 à 68).",
     analysis:
       "Le clergé faisait ouvertement campagne pour les conservateurs ; la presse républicaine répliquait par l'ironie et la polémique.",
   },
@@ -152,20 +152,20 @@ export const ANECDOTES: Anecdote[] = [
     pageRef: 4,
     icon: 'ban',
     content:
-      "Septembre 1872 : Victor Lefranc, ministre de l'Intérieur de Thiers, interdit par circulaire « toutes manifestations, tous banquets » le 4 septembre, anniversaire de la proclamation de la République. Le journal s'indigne qu'« en 1872, sous un gouvernement républicain », on interdise de fêter la République quand les processions cléricales sont tolérées.",
+      "Septembre 1872 : Victor Lefranc, ministre de l'Intérieur de Thiers, interdit par circulaire « toutes manifestations, tous banquets » le 4 septembre, anniversaire de la proclamation de la République. Le journal s'indigne qu'« en 1872, sous un gouvernement républicain », on interdise de fêter la République quand les processions cléricales sont tolérées.",
     analysis:
-      "La République, encore provisoire, n'ose pas fêter sa propre naissance. Les républicains choisissent la légalité : « Des désordres ne se sont produit nulle part. »",
+      "La République, encore provisoire, n'ose pas fêter sa propre naissance. Les républicains choisissent la légalité : « Des désordres ne se sont produit nulle part. »",
   },
 ];
 
 export const VOCABULARY = [
   {
     term: 'Bonaparteux',
-    def: "Sobriquet méprisant des bonapartistes dans les journaux du recueil ; on lit aussi « badinguistes », de Badinguet, surnom moqueur de Napoléon III (« le petit Badinguet » désigne le Prince impérial).",
+    def: "Sobriquet méprisant des bonapartistes dans les journaux du recueil ; on lit aussi « badinguistes », de Badinguet, surnom moqueur de Napoléon III (« le petit Badinguet » désigne le Prince impérial).",
   },
   {
     term: 'Les légitimistes',
-    def: "Partisans du comte de Chambord et du drapeau blanc, alliés de circonstance des bonapartistes contre les républicains : « cette alliance monstrueuse des légitimistes et des badinguistes » (p. 16).",
+    def: "Partisans du comte de Chambord et du drapeau blanc, alliés de circonstance des bonapartistes contre les républicains : « cette alliance monstrueuse des légitimistes et des badinguistes » (p. 16).",
   },
   {
     term: "L'Ordre moral",
@@ -173,7 +173,7 @@ export const VOCABULARY = [
   },
   {
     term: "L'insigne basilique",
-    def: "Titre officiel de la cathédrale Saint-Pierre de Saintes, érigée en basilique mineure en 1870, que la presse républicaine reprend avec ironie : c'est là que prêche le « capucin » pendant le carême de 1875.",
+    def: "Titre officiel de la cathédrale Saint-Pierre de Saintes, érigée en basilique mineure en 1870, que la presse républicaine reprend avec ironie : c'est là que prêche le « capucin » pendant le carême de 1875.",
   },
 ];
 
@@ -186,12 +186,12 @@ export const BOOK_THEMES = [
   {
     icon: 'feather',
     title: 'La satire comme arme',
-    text: "Face à la censure, l'humour est un refuge : le recueil regorge des « Causeries » d'Arthur Lanlair, qui raillent les « bonaparteux » et les pèlerinages politiques.",
+    text: "Face à la censure, l'humour est un refuge : le recueil regorge des « Causeries » d'Arthur Lanlair, qui raillent les « bonaparteux » et les pèlerinages politiques.",
   },
   {
     icon: 'eagle',
     title: "L'ombre de l'Empire",
-    text: "Le recueil trahit la crainte d'une restauration impériale au profit du Prince impérial, « Napoléon IV » (Napoléon III meurt en janvier 1873). Le parti bonapartiste de l'« Appel au peuple » y est dénoncé comme une menace pour la République.",
+    text: "Le recueil trahit la crainte d'une restauration impériale au profit du Prince impérial, « Napoléon IV » (Napoléon III meurt en janvier 1873). Le parti bonapartiste de l'« Appel au peuple » y est dénoncé comme une menace pour la République.",
   },
   {
     icon: 'scale',
@@ -204,7 +204,7 @@ export const KEY_FIGURES = [
   {
     name: 'Arthur Lanlair',
     role: 'Le chroniqueur',
-    desc: "Pseudonyme d'un chroniqueur de L'Indépendant (1874) puis de L'Union républicaine (1875) : ses « Causeries » et ses répliques rythment le recueil.",
+    desc: "Pseudonyme d'un chroniqueur de L'Indépendant (1874) puis de L'Union républicaine (1875) : ses « Causeries » et ses répliques rythment le recueil.",
   },
   {
     name: 'Baron Eschassériaux',
@@ -212,7 +212,7 @@ export const KEY_FIGURES = [
     desc: 'Figure tutélaire du bonapartisme saintongeais. La cible la plus fréquente du recueil reste toutefois la presse bonapartiste, au premier rang Le Progrès de la Charente-Inférieure.',
   },
   {
-    name: 'Le « capucin »',
+    name: 'Le « capucin »',
     role: 'Le prédicateur',
     desc: "Le père Alexandre de Saint-Joseph, carme, prédicateur du carême 1875 à Saintes, qui transforme la chaire en tribune politique.",
   },
@@ -244,7 +244,7 @@ export const EXTERNAL_LINKS = [
     href: 'https://cimetieresmellois.fr/MELLE%2079%20GIRARD%20THEODORE.html',
   },
   {
-    label: 'Gallica : rechercher « Théodore Girard »',
+    label: 'Gallica : rechercher « Théodore Girard »',
     href: 'https://gallica.bnf.fr/services/engine/search/sru?operation=searchRetrieve&version=1.2&query=%28gallica%20all%20%22Th%C3%A9odore%20Girard%22%29',
   },
 ];

@@ -18,7 +18,7 @@ export default function Hero() {
           <h1 id="titre-principal" className="font-serif leading-tight text-stone-900">
             <span className="mb-3 block text-2xl tracking-wide text-stone-700 sm:text-3xl">
               Théodore Girard <span className="whitespace-nowrap">({HERO.lifespan})</span>
-            </span>
+            </span>{' '}
             <span className="block text-5xl lg:text-7xl">
               La Forge d'un <br />
               <span className="italic text-amber-700">Républicain</span>
@@ -55,7 +55,7 @@ export default function Hero() {
               className="h-full w-full object-cover opacity-90 transition-transform duration-700 hover:scale-105"
             />
             <figcaption className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/60 to-transparent p-8">
-              <span className="block text-center font-serif text-lg italic text-white">« {HERO.caption} »</span>
+              <span className="block text-center font-serif text-lg italic text-white">« {HERO.caption} »</span>
             </figcaption>
           </figure>
           <div className="absolute -right-4 -top-4 h-24 w-24 rounded-full bg-amber-200/50 blur-2xl" aria-hidden="true" />

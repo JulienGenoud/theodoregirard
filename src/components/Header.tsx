@@ -47,7 +47,7 @@ export default function Header({ active }: HeaderProps) {
         Aller au contenu
       </a>
       <nav aria-label="Navigation principale" className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
-        <a href="/#accueil" className="flex items-center rounded" aria-label="Archives Théodore Girard, retour en haut de page">
+        <a href="/#accueil" className="flex items-center rounded" aria-label="Archives Girard – accueil">
           <Feather className="mr-2 h-6 w-6 text-amber-700" aria-hidden="true" />
           <span className="font-serif text-xl font-bold tracking-wide text-stone-800">Archives Girard</span>
         </a>
@@ -86,7 +86,7 @@ export default function Header({ active }: HeaderProps) {
         </button>
       </nav>
 
-      <div id="menu-mobile" hidden={!isOpen} className="max-h-[calc(100vh-4rem)] overflow-y-auto border-b border-stone-200 bg-white lg:hidden">
+      <nav id="menu-mobile" aria-label="Navigation principale (mobile)" hidden={!isOpen} className="max-h-[calc(100vh-4rem)] overflow-y-auto border-b border-stone-200 bg-white lg:hidden">
         <ul className="space-y-1 px-2 pb-3 pt-2 sm:px-3">
           {NAV_ITEMS.map((item) => {
             const isActive = active === item.id;
@@ -106,7 +106,7 @@ export default function Header({ active }: HeaderProps) {
             );
           })}
         </ul>
-      </div>
+      </nav>
     </header>
   );
 }

@@ -4,7 +4,7 @@ import Footer from './Footer';
 import Header from './Header';
 import {
   PAGE_NOTES,
-  PAGE_SIZES,
+  PAGE_VIEW_SIZES,
   TOTAL_PAGES,
   pageAlt,
   pageImage,
@@ -65,7 +65,7 @@ function PageNavigation({ page, position }: { page: number; position: 'haut' | '
   );
 }
 
-/** Page dédiée (indexable) à une page du « Livre de combat ». */
+/** Page dédiée (indexable) à une page du « Livre de combat ». */
 export default function PageView({ page }: { page: number }) {
   const info = pageInfo(page);
   const entries = tocEntriesForPage(page);
@@ -120,7 +120,7 @@ export default function PageView({ page }: { page: number }) {
               <ul className="mt-4 space-y-1 font-serif text-xl text-stone-800">
                 {entries.map((entry) => (
                   <li key={entry.title}>
-                    « {entry.title} »
+                    « {entry.title} »
                     {entry.uncertain && <span className="ml-2 font-sans text-sm text-stone-600">(lecture incertaine)</span>}
                   </li>
                 ))}
@@ -135,7 +135,7 @@ export default function PageView({ page }: { page: number }) {
             <img
               src={pageImage(page, 900)}
               srcSet={pageSrcSet(page)}
-              sizes={PAGE_SIZES}
+              sizes={PAGE_VIEW_SIZES}
               width={info.w}
               height={info.h}
               alt={pageAlt(page)}

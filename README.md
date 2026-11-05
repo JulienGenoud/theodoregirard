@@ -19,8 +19,10 @@ npm run typecheck  # vérification TypeScript
 
 | Chemin | Rôle |
 | --- | --- |
-| `index.html` | Gabarit : balises SEO (titre, description, Open Graph, données structurées JSON-LD) |
-| `src/App.tsx` | Assemblage des sections et gestion des liens profonds (`#page-12`) |
+| `index.html` | Gabarit HTML commun |
+| `src/seo.ts` | Balises SEO de chaque page : titre, description, Open Graph, données structurées JSON-LD |
+| `src/App.tsx` | Choix de la vue : accueil ou page dédiée `/livre-de-combat/page-N/` |
+| `src/components/HomePage.tsx` | Accueil : sections, lecteur et liens profonds (`#page-12`) |
 | `src/components/` | Une section par fichier (en-tête, biographie, lecteur du livre, index…) |
 | `src/data/content.ts` | Tous les textes du site |
 | `src/data/book.ts` | Table des matières du livre et chemins des images |
