@@ -14,7 +14,7 @@ import type { Route } from './routes';
 
 const SITE_NAME = 'Archives Théodore Girard';
 const PERSON_ID = `${SITE_URL}/#theodore-girard`;
-const BOOK_ID = `${SITE_URL}/#livre-de-combat`;
+const BOOK_ID = `${SITE_URL}/#recueil`;
 const WEBSITE_ID = `${SITE_URL}/#site`;
 const OG_IMAGE = `${SITE_URL}/images/og-theodore-girard.jpg`;
 
@@ -58,7 +58,7 @@ const PERSON = {
   deathDate: '1918-10-13',
   deathPlace: { '@type': 'Place', name: 'Paris' },
   nationality: { '@type': 'Country', name: 'France' },
-  jobTitle: ['Garde des Sceaux, ministre de la Justice (1910-1911)', 'Sénateur des Deux-Sèvres (1895-1918)', 'Maire de Melle'],
+  jobTitle: ['Garde des Sceaux, ministre de la Justice (1910-1911)', 'Sénateur des Deux-Sèvres (1895-1918)', 'Maire de Melle', 'Avoué à Melle'],
   description:
     'Homme politique français (1851-1918) : avoué, maire de Melle, sénateur des Deux-Sèvres et garde des Sceaux dans le deuxième gouvernement Briand.',
   image: `${SITE_URL}${PORTRAIT.src}`,
@@ -74,10 +74,9 @@ const PERSON = {
 const BOOK = {
   '@type': 'Book',
   '@id': BOOK_ID,
-  name: 'Livre de combat (1872-1876)',
-  alternateName: 'Recueil de coupures de presse de Théodore Girard',
+  name: 'Recueil de coupures de presse de Théodore Girard (1872-1876)',
   description:
-    "Recueil de coupures de presse et de notes réunies par Théodore Girard (L'Indépendant, 1872-1874 ; L'Union républicaine, 1875-1876), avec sa table manuscrite et des documents ajoutés.",
+    "Recueil de coupures de presse réunies par Théodore Girard (L'Indépendant, 1872-1874 ; L'Union républicaine, 1875-1876), avec sa table manuscrite et des documents ajoutés, dont certains postérieurs à sa mort.",
   creator: { '@id': PERSON_ID },
   about: { '@id': PERSON_ID },
   inLanguage: 'fr',
@@ -88,9 +87,9 @@ const BOOK = {
 };
 
 function homeHead(): HeadData {
-  const title = 'Théodore Girard (1851-1918) – Archives et Livre de combat';
+  const title = 'Théodore Girard (1851-1918) – Biographie et recueil de presse';
   const description =
-    'Théodore Girard (1851-1918), maire de Melle, sénateur des Deux-Sèvres et garde des Sceaux : biographie et son « Livre de combat » (1872-1876) à feuilleter.';
+    'Théodore Girard (1851-1918), maire de Melle, sénateur des Deux-Sèvres et garde des Sceaux : biographie et recueil de coupures de presse (1872-1876) à feuilleter.';
   return {
     title,
     description,
@@ -130,7 +129,7 @@ function homeHead(): HeadData {
         {
           '@type': 'AudioObject',
           '@id': `${SITE_URL}/#radio`,
-          name: `Émission de radio consacrée à Théodore Girard (${RADIO.station})`,
+          name: `« ${RADIO.series} » : Théodore Girard (${RADIO.station})`,
           description: RADIO.description,
           contentUrl: `${SITE_URL}${RADIO.src}`,
           encodingFormat: 'audio/mpeg',
@@ -144,7 +143,7 @@ function homeHead(): HeadData {
   };
 }
 
-function pageHead(n: number): HeadData {
+function pageHead(n: number, excerpt?: string): HeadData {
   const titles = tocTitlesForPage(n);
   const sections = sectionsForPage(n);
   const sectionLabel = sections.map((s) => `${s.title} (${s.period})`).join(' / ');
@@ -152,13 +151,15 @@ function pageHead(n: number): HeadData {
   const path = pageUrl(n);
 
   const title = titles.length
-    ? `${truncate(titles[0], 42)} – Livre de combat, p. ${n}`
-    : `Livre de combat de Théodore Girard – page ${n}`;
+    ? `${truncate(titles[0], 42)} – recueil de Théodore Girard, p. ${n}`
+    : `Recueil de Théodore Girard – page ${n}`;
   const note = PAGE_NOTES[n];
   const description = truncate(
     note
-      ? `Page ${n} du Livre de combat de Théodore Girard. ${note}`
-      : `Page ${n} sur ${TOTAL_PAGES} du Livre de combat de Théodore Girard, ${sectionLabel}${
+      ? `Page ${n} du recueil de Théodore Girard. ${note}`
+      : !titles.length && excerpt
+        ? `Page ${n} du recueil de Théodore Girard : «\u00a0${excerpt}\u00a0»`
+        : `Page ${n} sur ${TOTAL_PAGES} du recueil de Théodore Girard, ${sectionLabel}${
           titles.length ? ` : ${titles.join(', ')}` : ''
         }. Scan haute définition.`,
     160,
@@ -185,7 +186,7 @@ function pageHead(n: number): HeadData {
             '@type': 'BreadcrumbList',
             itemListElement: [
               { '@type': 'ListItem', position: 1, name: 'Accueil', item: `${SITE_URL}/` },
-              { '@type': 'ListItem', position: 2, name: 'Livre de combat', item: `${SITE_URL}/#livre` },
+              { '@type': 'ListItem', position: 2, name: 'Le recueil', item: `${SITE_URL}/#livre` },
               { '@type': 'ListItem', position: 3, name: `Page ${n}`, item: `${SITE_URL}${path}` },
             ],
           },
@@ -204,8 +205,8 @@ function pageHead(n: number): HeadData {
 }
 
 /** Bloc HTML à insérer dans <head> pour l'adresse donnée. */
-export function renderHead(route: Route): string {
-  const data = route.kind === 'page' ? pageHead(route.page) : homeHead();
+export function renderHead(route: Route, pageExcerpt?: string): string {
+  const data = route.kind === 'page' ? pageHead(route.page, pageExcerpt) : homeHead();
   const url = `${SITE_URL}${data.path}`;
   return [
     `<title>${escapeHtml(data.title)}</title>`,
@@ -218,7 +219,7 @@ export function renderHead(route: Route): string {
     `<meta property="og:image" content="${OG_IMAGE}" />`,
     '<meta property="og:image:width" content="1200" />',
     '<meta property="og:image:height" content="630" />',
-    '<meta property="og:image:alt" content="Portrait de Théodore Girard et titre du site Archives Théodore Girard" />',
+    '<meta property="og:image:alt" content="Portrait de Théodore Girard vers 1915, avec son nom, ses dates (1851-1918) et ses fonctions : maire de Melle, sénateur des Deux-Sèvres, garde des Sceaux (1910-1911)" />',
     jsonLd(data.structuredData),
   ].join('\n    ');
 }

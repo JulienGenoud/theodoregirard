@@ -16,6 +16,7 @@ import {
   tocEntriesForPage,
   tocTitlesForPage,
 } from '../data/book';
+import { BOOK_ABOUT } from '../data/content';
 
 const isTypingTarget = (target: EventTarget | null): boolean =>
   target instanceof HTMLElement &&
@@ -65,8 +66,8 @@ function PageNavigation({ page, position }: { page: number; position: 'haut' | '
   );
 }
 
-/** Page dédiée (indexable) à une page du « Livre de combat ». */
-export default function PageView({ page }: { page: number }) {
+/** Page dédiée (indexable) à une page du recueil. */
+export default function PageView({ page, textHtml }: { page: number; textHtml?: string }) {
   const info = pageInfo(page);
   const entries = tocEntriesForPage(page);
   const sections = sectionsForPage(page);
@@ -99,7 +100,7 @@ export default function PageView({ page }: { page: number }) {
               <li aria-hidden="true">›</li>
               <li>
                 <a href="/#livre" className="underline decoration-stone-300 underline-offset-4 hover:text-amber-800">
-                  Livre de combat
+                  Le recueil
                 </a>
               </li>
               <li aria-hidden="true">›</li>
@@ -114,7 +115,7 @@ export default function PageView({ page }: { page: number }) {
               {sections.map((section) => `${section.title} · ${section.period}`).join(' / ')}
             </p>
             <h1 className="mt-2 font-serif text-3xl text-stone-900 sm:text-4xl">
-              Livre de combat de Théodore Girard <span className="whitespace-nowrap">– page {page}</span>
+              Recueil de Théodore Girard <span className="whitespace-nowrap">– page {page}</span>
             </h1>
             {entries.length > 0 && (
               <ul className="mt-4 space-y-1 font-serif text-xl text-stone-800">
@@ -161,14 +162,29 @@ export default function PageView({ page }: { page: number }) {
 
           <PageNavigation page={page} position="bas" />
 
+          {textHtml ? (
+            <details className="group mt-10 rounded-lg border border-stone-200 bg-white">
+              <summary className="cursor-pointer list-none rounded-lg px-6 py-4 font-serif text-xl text-stone-900 hover:bg-stone-50 [&::-webkit-details-marker]:hidden">
+                Texte de la page{' '}
+                <span className="font-sans text-sm text-stone-600">(reconnaissance automatique, non relue)</span>
+                <span className="ml-2 inline-block text-sm text-stone-600 transition-transform group-open:rotate-180" aria-hidden="true">
+                  ▾
+                </span>
+              </summary>
+              <div
+                id="texte-page"
+                className="space-y-3 px-6 pb-6 font-serif leading-relaxed text-stone-800"
+                dangerouslySetInnerHTML={{ __html: textHtml }}
+              />
+            </details>
+          ) : null}
+
           <section aria-labelledby="a-propos-du-livre" className="mt-10 rounded-lg border border-stone-200 bg-white p-6 sm:p-8">
             <h2 id="a-propos-du-livre" className="mb-3 font-serif text-2xl text-stone-900">
-              À propos du Livre de combat
+              À propos du recueil
             </h2>
             <p className="leading-relaxed text-stone-700">
-              Recueil de {TOTAL_PAGES} pages de coupures de presse et de notes réunies par Théodore Girard (1851-1918) au
-              temps de ses combats républicains en Saintonge (1872-1876), complété de documents plus tardifs. Girard deviendra
-              maire de Melle, sénateur des Deux-Sèvres et garde des Sceaux.
+              {BOOK_ABOUT}
             </p>
             <p className="mt-4 flex flex-wrap gap-x-6 gap-y-2 font-sans text-sm">
               <a href="/#biographie" className="text-amber-800 underline-offset-4 hover:underline">

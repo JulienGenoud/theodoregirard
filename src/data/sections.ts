@@ -11,7 +11,7 @@ export const NAV_ITEMS: readonly NavItem[] = [
   { id: 'cles-de-lecture', label: 'Clés de lecture' },
   { id: 'radio', label: 'Radio' },
   { id: 'analyse', label: 'Analyse' },
-  { id: 'livre', label: 'Le Livre' },
+  { id: 'livre', label: 'Le recueil' },
   { id: 'index', label: 'Index' },
 ];
 

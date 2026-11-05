@@ -1,5 +1,5 @@
 import { BookOpen, Coins, Key, TrendingUp } from 'lucide-react';
-import { BONAPARTIST_CONTEXT, EVOLUTION_ANALYSIS, VOCABULARY } from '../data/content';
+import { BONAPARTIST_CONTEXT, EVOLUTION_ANALYSIS, KEYS_TITLES, VOCABULARY } from '../data/content';
 
 export default function Keys() {
   return (
@@ -7,7 +7,7 @@ export default function Keys() {
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <div className="mb-16 text-center">
           <h2 id="cles-titre" className="mb-4 flex items-center justify-center gap-3 font-serif text-3xl text-stone-900 sm:text-4xl">
-            <Key className="text-stone-500" aria-hidden="true" /> Les clés de lecture
+            <Key className="text-stone-500" aria-hidden="true" /> {KEYS_TITLES.section}
           </h2>
           <div className="mx-auto h-1 w-24 rounded-full bg-stone-300" aria-hidden="true" />
         </div>
@@ -15,7 +15,7 @@ export default function Keys() {
         <div className="grid grid-cols-1 gap-12 lg:grid-cols-2">
           <div className="rounded-lg border border-stone-200 bg-stone-50 p-6 sm:p-8">
             <h3 className="mb-6 flex items-center gap-2 font-serif text-xl font-bold text-stone-900">
-              <BookOpen size={20} className="text-amber-700" aria-hidden="true" /> Le vocabulaire du combat
+              <BookOpen size={20} className="text-amber-700" aria-hidden="true" /> {KEYS_TITLES.vocabulary}
             </h3>
             <dl className="space-y-6">
               {VOCABULARY.map((voc) => (

@@ -1,4 +1,4 @@
-import { BIOGRAPHY_EVENTS, BIO_INTRO, BIO_SUMMARY } from '../data/content';
+import { BIOGRAPHY_EVENTS, BIO_INTRO, BIO_SUMMARY, BIO_TITLE } from '../data/content';
 
 export default function Biography() {
   return (
@@ -6,7 +6,7 @@ export default function Biography() {
       <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
         <div className="mb-16 text-center">
           <h2 id="biographie-titre" className="mb-4 font-serif text-3xl text-stone-900 sm:text-4xl">
-            Une vie en deux actes
+            {BIO_TITLE}
           </h2>
           <div className="mx-auto mb-8 h-1 w-24 rounded-full bg-amber-700" aria-hidden="true" />
           <p className="mx-auto max-w-2xl font-serif text-lg text-stone-700">{BIO_SUMMARY}</p>
@@ -30,7 +30,7 @@ export default function Biography() {
                     event.period === 'roots' ? 'text-amber-800' : 'text-stone-600'
                   }`}
                 >
-                  {event.period === 'roots' ? 'RACINES & MILITANTISME' : "HOMME D'ÉTAT"} • {/^\d{4}$/.test(event.year) ? <time dateTime={event.year}>{event.year}</time> : <span>{event.year}</span>}
+                  {/^\d{4}$/.test(event.year) ? <time dateTime={event.year}>{event.year}</time> : <span>{event.year}</span>}
                 </p>
                 <h3 className="mb-2 mt-1 font-serif text-xl font-bold text-stone-800">{event.title}</h3>
                 <p className="font-serif italic leading-relaxed text-stone-600">{event.description}</p>

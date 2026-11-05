@@ -1,5 +1,12 @@
 import { Download, Headphones, Volume2 } from 'lucide-react';
 import { RADIO } from '../data/content';
+import transcript from '../../content/radio/transcription-relue.txt?raw';
+
+// Transcription relue, regroupée en paragraphes de quelques lignes.
+const TRANSCRIPT_LINES = transcript.split('\n').map((line) => line.trim()).filter(Boolean);
+const TRANSCRIPT_PARAGRAPHS = Array.from({ length: Math.ceil(TRANSCRIPT_LINES.length / 6) }, (_, i) =>
+  TRANSCRIPT_LINES.slice(i * 6, i * 6 + 6).join(' '),
+);
 
 export default function AudioSection() {
   return (
@@ -46,6 +53,21 @@ export default function AudioSection() {
             </div>
           </div>
         </div>
+
+        <details className="group mt-8 rounded-xl border border-stone-700 bg-stone-800/40">
+          <summary className="cursor-pointer list-none rounded-xl px-5 py-4 font-serif text-lg text-stone-100 hover:bg-stone-800 [&::-webkit-details-marker]:hidden">
+            Lire la transcription de l'émission{' '}
+            <span className="font-sans text-sm text-stone-300">(automatique, relue ; noms incertains signalés [?])</span>
+            <span className="ml-2 inline-block text-sm text-stone-300 transition-transform group-open:rotate-180" aria-hidden="true">
+              ▾
+            </span>
+          </summary>
+          <div className="space-y-3 px-5 pb-6 text-sm leading-relaxed text-stone-200">
+            {TRANSCRIPT_PARAGRAPHS.map((paragraph, index) => (
+              <p key={index}>{paragraph}</p>
+            ))}
+          </div>
+        </details>
 
         <p className="mt-12 text-center text-xs italic text-stone-400">{RADIO.credit}</p>
       </div>

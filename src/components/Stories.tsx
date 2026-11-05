@@ -1,7 +1,7 @@
 import type { ReactElement } from 'react';
 import { ArrowRight, Ban, Flower, Lightbulb, Megaphone } from 'lucide-react';
 import { pageUrl } from '../data/book';
-import { ANECDOTES } from '../data/content';
+import { ANECDOTES, STORIES_INTRO } from '../data/content';
 import type { Anecdote } from '../data/content';
 import { plainClick } from '../lib/plainClick';
 
@@ -23,13 +23,13 @@ export default function Stories({ onOpenPage }: StoriesProps) {
       <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="mb-16 text-center">
           <p className="mb-4 inline-block rounded-full bg-amber-800 px-3 py-1 text-xs font-bold uppercase tracking-widest text-amber-50">
-            Archives vivantes
+            {STORIES_INTRO.eyebrow}
           </p>
           <h2 id="histoires-titre" className="mb-6 font-serif text-4xl text-stone-900">
-            Au cœur de la mêlée (1872-1876)
+            {STORIES_INTRO.title}
           </h2>
           <p className="mx-auto max-w-2xl font-serif text-lg italic text-stone-700">
-            Quand la politique se réglait à coups de plumes, de procès et d'escroqueries aux violettes.
+            {STORIES_INTRO.text}
           </p>
         </div>
 

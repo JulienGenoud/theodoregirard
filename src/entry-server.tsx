@@ -9,14 +9,17 @@ import { renderHead } from './seo';
 export { ALL_PATHS };
 
 /** Rendu HTML statique d'une adresse, injecté dans le gabarit au build. */
-export function render(urlPath: string): { html: string; head: string } {
+export function render(
+  urlPath: string,
+  extras: { pageTextHtml?: string; pageExcerpt?: string } = {},
+): { html: string; head: string } {
   const route = parseRoute(urlPath);
   const html = renderToString(
     <StrictMode>
-      <App route={route} />
+      <App route={route} pageTextHtml={extras.pageTextHtml} />
     </StrictMode>,
   );
-  return { html, head: renderHead(route) };
+  return { html, head: renderHead(route, extras.pageExcerpt) };
 }
 
 /** Images à déclarer dans le sitemap pour une adresse. */

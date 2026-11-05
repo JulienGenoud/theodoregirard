@@ -20,8 +20,8 @@ export default function Hero() {
               Théodore Girard <span className="whitespace-nowrap">({HERO.lifespan})</span>
             </span>{' '}
             <span className="block text-5xl lg:text-7xl">
-              La Forge d'un <br />
-              <span className="italic text-amber-700">Républicain</span>
+              {HERO.titleLine1} <br />
+              <span className="italic text-amber-700">{HERO.titleLine2}</span>
             </span>
           </h1>
           <p className="mx-auto max-w-2xl font-serif text-xl leading-relaxed text-stone-700 lg:mx-0">{HERO.lead}</p>
@@ -31,14 +31,14 @@ export default function Hero() {
               className="group flex items-center justify-center gap-2 rounded bg-stone-900 px-8 py-4 text-stone-50 shadow-lg transition-all hover:bg-stone-800"
             >
               <BookOpen size={20} className="transition-transform group-hover:scale-110" aria-hidden="true" />
-              Consulter le Livre de combat
+              Feuilleter le recueil
             </a>
             <a
               href="#histoires"
               className="flex items-center justify-center gap-2 rounded border border-stone-300 bg-white px-8 py-4 text-stone-700 shadow-sm transition-all hover:bg-stone-50"
             >
               <Scroll size={20} aria-hidden="true" />
-              Histoires oubliées
+              Histoires tirées du recueil
             </a>
           </div>
         </div>
@@ -55,7 +55,7 @@ export default function Hero() {
               className="h-full w-full object-cover opacity-90 transition-transform duration-700 hover:scale-105"
             />
             <figcaption className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/60 to-transparent p-8">
-              <span className="block text-center font-serif text-lg italic text-white">« {HERO.caption} »</span>
+              <span className="block text-center font-serif text-lg italic text-white">{HERO.caption}</span>
             </figcaption>
           </figure>
           <div className="absolute -right-4 -top-4 h-24 w-24 rounded-full bg-amber-200/50 blur-2xl" aria-hidden="true" />

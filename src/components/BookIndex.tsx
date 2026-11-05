@@ -18,8 +18,9 @@ export default function BookIndex({ currentPage, onOpenPage }: BookIndexProps) {
           </h2>
           <div className="mx-auto mb-6 h-1 w-24 rounded-full bg-amber-700" aria-hidden="true" />
           <p className="mx-auto max-w-2xl font-serif italic text-stone-700">
-            Établi d'après la table manuscrite de Théodore Girard (p. 133-139). Cliquez sur un titre pour ouvrir la page dans
-            le lecteur ; chaque page dispose aussi de sa propre adresse.
+            Établi d'après la table manuscrite de Théodore Girard (p. 133-139) pour les pages 1 à 124 ; la suite est décrite
+            d'après les scans. Cliquez sur un titre pour ouvrir la page dans le lecteur ; chaque page dispose aussi de sa
+            propre adresse.
           </p>
         </div>
 

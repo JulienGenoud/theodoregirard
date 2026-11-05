@@ -1,5 +1,5 @@
 import { BookOpen, PenTool, Scale, Sword } from 'lucide-react';
-import { BOOK_THEMES, KEY_FIGURES } from '../data/content';
+import { ANALYSIS_INTRO, BOOK_THEMES, KEY_FIGURES } from '../data/content';
 
 const icons = {
   feather: <PenTool className="text-amber-700" size={32} aria-hidden="true" />,
@@ -13,11 +13,11 @@ export default function Analysis() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="mb-16 text-center">
           <h2 id="analyse-titre" className="mb-4 font-serif text-3xl text-stone-900 sm:text-4xl">
-            Analyse historique
+            {ANALYSIS_INTRO.title}
           </h2>
           <div className="mx-auto mb-6 h-1 w-24 rounded-full bg-amber-700" aria-hidden="true" />
           <p className="mx-auto max-w-2xl italic text-stone-600">
-            Comprendre les enjeux derrière les caricatures et les textes enflammés.
+            {ANALYSIS_INTRO.text}
           </p>
         </div>
 
@@ -35,7 +35,7 @@ export default function Analysis() {
 
         <div className="rounded-xl bg-stone-900 p-8 text-stone-50 md:p-12">
           <h3 className="mb-8 border-b border-stone-800 pb-4 text-center font-serif text-2xl text-amber-400">
-            Les acteurs du drame
+            {ANALYSIS_INTRO.figuresTitle}
           </h3>
           <ul className="grid grid-cols-1 gap-8 md:grid-cols-3">
             {KEY_FIGURES.map((fig) => (

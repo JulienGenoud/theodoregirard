@@ -13,6 +13,7 @@ import {
   pageUrl,
   tocTitlesForPage,
 } from '../data/book';
+import { BOOK_INTRO } from '../data/content';
 
 interface BookReaderProps {
   /** Page affichée (1 à TOTAL_PAGES). */
@@ -208,12 +209,11 @@ export default function BookReader({ page, onPageChange, isActive }: BookReaderP
       <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
         <div className="mb-10 text-center">
           <h2 id="livre-titre" tabIndex={-1} className="mb-4 font-serif text-3xl text-stone-900 sm:text-4xl">
-            Le Livre de combat
+            Le recueil de Théodore Girard
           </h2>
           <div className="mx-auto mb-6 h-1 w-24 rounded-full bg-amber-700" aria-hidden="true" />
           <p className="mx-auto max-w-2xl font-serif text-lg italic text-stone-700">
-            Les {TOTAL_PAGES} pages du recueil de coupures de presse et de notes constitué par Théodore Girard
-            entre 1872 et 1876, à feuilleter en intégralité.
+            {BOOK_INTRO}
           </p>
         </div>
 
@@ -221,7 +221,7 @@ export default function BookReader({ page, onPageChange, isActive }: BookReaderP
           ref={containerRef}
           role={emulatedFullscreen ? 'dialog' : undefined}
           aria-modal={emulatedFullscreen || undefined}
-          aria-label={emulatedFullscreen ? 'Lecteur du Livre de combat en plein écran' : undefined}
+          aria-label={emulatedFullscreen ? 'Lecteur du recueil en plein écran' : undefined}
           className={isFullscreen ? 'fixed inset-0 z-[60] overflow-y-auto bg-stone-950 pb-10' : 'relative'}
         >
           <div
@@ -253,7 +253,7 @@ export default function BookReader({ page, onPageChange, isActive }: BookReaderP
             </div>
 
             <p className="hidden min-w-0 flex-1 truncate text-center font-sans text-sm text-stone-300 md:block">
-              {titles.length ? titles.join(' · ') : `Livre de combat, page ${page}`}
+              {titles.length ? titles.join(' · ') : `Recueil, page ${page}`}
             </p>
 
             <div className="flex items-center gap-1">

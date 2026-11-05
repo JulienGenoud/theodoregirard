@@ -1,7 +1,11 @@
 # Archives Théodore Girard
 
-Site consacré à Théodore Girard (1851-1918) — maire de Melle, sénateur des Deux-Sèvres, garde des Sceaux — et à son
-« Livre de combat » (1872-1876), recueil de 146 pages de coupures de presse et de notes.
+Site consacré à Théodore Girard (1851-1918) — avoué et maire de Melle, sénateur des Deux-Sèvres, garde des Sceaux — et
+au recueil de 146 pages de coupures de presse (1872-1876) dont il a dressé et signé la table.
+
+Règle éditoriale : aucune affirmation sans source (Sénat, Wikipédia, BnF, presse d'époque, scans du recueil, émission de
+Radio Accords). Le nom « Livre de combat », inventé par une IA en février 2026, a été abandonné : le recueil ne porte pas
+de titre.
 
 **En ligne : <https://www.theodoregirard.fr>**
 
@@ -21,7 +25,7 @@ npm run typecheck  # vérification TypeScript
 | --- | --- |
 | `index.html` | Gabarit HTML commun |
 | `src/seo.ts` | Balises SEO de chaque page : titre, description, Open Graph, données structurées JSON-LD |
-| `src/App.tsx` | Choix de la vue : accueil ou page dédiée `/livre-de-combat/page-N/` |
+| `src/App.tsx` | Choix de la vue : accueil ou page dédiée `/recueil/page-N/` |
 | `src/components/HomePage.tsx` | Accueil : sections, lecteur et liens profonds (`#page-12`) |
 | `src/components/` | Une section par fichier (en-tête, biographie, lecteur du livre, index…) |
 | `src/data/content.ts` | Tous les textes du site |

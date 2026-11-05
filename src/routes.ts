@@ -2,7 +2,7 @@ import { TOTAL_PAGES, pageUrl } from './data/book';
 
 export type Route = { kind: 'home' } | { kind: 'page'; page: number };
 
-const PAGE_PATH = /^\/livre-de-combat\/page-(\d{1,3})\/?$/;
+const PAGE_PATH = /^\/recueil\/page-(\d{1,3})\/?$/;
 
 /** Détermine la vue à afficher à partir du chemin de l'URL. */
 export function parseRoute(pathname: string): Route {

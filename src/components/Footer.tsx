@@ -1,5 +1,5 @@
 import { ExternalLink, Mail } from 'lucide-react';
-import { CONTACT_EMAIL, EXTERNAL_LINKS } from '../data/content';
+import { CONTACT_EMAIL, EXTERNAL_LINKS, FOOTER } from '../data/content';
 
 export default function Footer() {
   return (
@@ -8,7 +8,7 @@ export default function Footer() {
         <div>
           <h2 className="mb-4 font-serif text-lg text-stone-100">Archives Théodore Girard</h2>
           <p className="leading-relaxed">
-            Site consacré à Théodore Girard (1851-1918) et à son « Livre de combat » (1872-1876).
+            {FOOTER.about}
           </p>
           <a
             href={`mailto:${CONTACT_EMAIL}`}
@@ -44,8 +44,7 @@ export default function Footer() {
         <div>
           <h2 className="mb-4 font-serif text-lg text-stone-100">Crédits &amp; mentions légales</h2>
           <p className="leading-relaxed">
-            Coupures et manuscrits (1872-1899) : domaine public ; p. 141 (notice du dictionnaire Jolly) et p. 142 (coupure des années 1920) : droits réservés. Portrait : Théodore Girard vers 1915, collection de la
-            famille Girard (Wikimedia Commons). Émission radio : © Radio Accords Poitiers, Dominique Breillat.
+            {FOOTER.credits}
           </p>
           <p className="mt-2 leading-relaxed">
             Site personnel non commercial, sans cookie ni traceur. Hébergement : GitHub Pages (GitHub, Inc., 88 Colin P.

@@ -18,9 +18,29 @@ for (const marker of ['<!--app-head-->', '<!--app-html-->']) {
   if (!template.includes(marker)) throw new Error(`Marqueur ${marker} introuvable dans dist/index.html`);
 }
 
+// Texte OCR (content/ocr/pN.txt) : injecté dans la page dédiée, sans alourdir le JavaScript.
+const escapeHtml = (s) => s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+async function pageTextFor(urlPath) {
+  const match = /\/page-(\d+)\/$/.exec(urlPath);
+  if (!match) return {};
+  let text;
+  try {
+    text = (await readFile(path.join(root, 'content/ocr', `p${match[1]}.txt`), 'utf8')).trim();
+  } catch {
+    return {};
+  }
+  if (!text) return {};
+  const paragraphs = text.split(/\n\s*\n/).map((p) => p.trim()).filter(Boolean);
+  const first = paragraphs.find((p) => p.length > 60) ?? paragraphs[0];
+  return {
+    pageTextHtml: paragraphs.map((p) => `<p>${escapeHtml(p)}</p>`).join(''),
+    pageExcerpt: first.length > 100 ? `${first.slice(0, 100).replace(/\s+\S*$/, '')}…` : first,
+  };
+}
+
 let totalBytes = 0;
 for (const urlPath of ALL_PATHS) {
-  const { html, head } = render(urlPath);
+  const { html, head } = render(urlPath, await pageTextFor(urlPath));
   if (!html.includes('<h1') || !head.includes('<title>')) {
     throw new Error(`Pré-rendu incomplet pour ${urlPath}`);
   }

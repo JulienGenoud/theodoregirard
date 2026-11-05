@@ -8,7 +8,7 @@ export interface PageInfo {
   h: number;
 }
 
-/** Scans du « Livre de combat », générés par scripts/build-pages.sh. */
+/** Scans du recueil, générés par scripts/build-pages.sh. */
 export const PAGES: readonly PageInfo[] = pages;
 export const TOTAL_PAGES = PAGES.length;
 
@@ -29,7 +29,7 @@ export const pageSrcSet = (n: number): string => {
 export const pagePdf = (n: number): string => `/livre/pdf/${n}.pdf`;
 
 /** Adresse de la page dédiée (indexable) d'une page du livre. */
-export const pageUrl = (n: number): string => `/livre-de-combat/page-${n}/`;
+export const pageUrl = (n: number): string => `/recueil/page-${n}/`;
 
 export interface TocItem {
   page: number;
@@ -56,7 +56,8 @@ export const TOC_SECTIONS: readonly TocSection[] = [
     id: 'independant',
     title: "L'Indépendant",
     period: '1872-1874',
-    description: "Coupures du journal L'Indépendant, dont les premiers articles et les « réponses » de Théodore Girard.",
+    description:
+      "Coupures de L'Indépendant de la Charente-Inférieure, dont « La peine de mort », signé « TH. G. » (p. 5-6), et les textes que Girard intitule dans sa table « Ma réponse » (p. 13 et 19).",
     entries: [
       { page: 1, title: 'Théâtre – Marie Tudor' },
       { page: 2, title: 'Théâtre – Les Enfers de Paris' },
@@ -123,7 +124,7 @@ export const TOC_SECTIONS: readonly TocSection[] = [
     title: "L'Union républicaine",
     period: '1875-1876',
     description:
-      "Coupures de L'Union républicaine (Saintes) : la querelle du « capucin », les causeries d'Arthur Lanlair, les polémiques avec la presse bonapartiste et cléricale.",
+      "Coupures de L'Union républicaine (Saintes) : la querelle du « capucin », les chroniques d'Arthur Lanlair, les polémiques avec la presse bonapartiste et cléricale.",
     entries: [
       { page: 55, title: 'Un exorcisme' },
       { page: 56, title: 'Un regard au-delà des Pyrénées' },
@@ -209,21 +210,21 @@ export const TOC_SECTIONS: readonly TocSection[] = [
   {
     id: 'fin-du-recueil',
     title: 'Fin du recueil et documents ajoutés',
-    period: '1876-1920',
+    period: '1876 et après',
     description:
-      "La dernière coupure inscrite dans la table de Girard (1876), puis des documents ajoutés plus tard au recueil, décrits ici d'après les scans.",
+      "La dernière coupure inscrite dans la table de Girard (1876), puis des documents ajoutés plus tard au recueil, jusqu'au XXe siècle, décrits ici d'après les scans.",
     entries: [
       { page: 124, title: 'Les violettes napoléoniennes' },
-      { page: 125, title: 'À la rédaction du Rappel charentais (coupure)' },
-      { page: 126, title: "Discours manuscrit à la distribution des prix de l'école communale de Melle (24 août 1880)" },
+      { page: 125, title: 'À la rédaction du Rappel charentais (coupure de fin 1876 ou début 1877)' },
+      { page: 126, title: "Discours manuscrit non signé, distribution des prix de l'école communale de Melle (24 août 1880)" },
       { page: 129, title: 'Discours manuscrit « de l\'année 1880 » (distribution des prix)' },
       { page: 133, title: 'Table manuscrite du recueil, signée « Th. Girard » (p. 133-139)' },
-      { page: 140, title: 'Note manuscrite postérieure', uncertain: true },
-      { page: 141, title: 'Notice du Dictionnaire des parlementaires français 1889-1940 (Jean Jolly), photocopie' },
-      { page: 142, title: 'Coupure « L\'École et le Socialisme », signée Georges Girard (années 1920)', uncertain: true },
+      { page: 140, title: 'Note manuscrite non datée' },
+      { page: 141, title: 'Notice du Dictionnaire des parlementaires français 1889-1940 (Jean Jolly, tome V), photocopie' },
+      { page: 142, title: 'Coupure « L\'École et le Socialisme », signée Georges Girard (Le Populaire du Centre, 2 juillet 1922)' },
       { page: 143, title: 'Le Mémorial des Deux-Sèvres du jeudi 9 février 1899 (une)' },
-      { page: 144, title: '« Nos compatriotes » : portrait de Théodore Girard paru dans Le Figaro (janvier 1899), suite p. 145' },
-      { page: 146, title: 'Schéma manuscrit', uncertain: true },
+      { page: 144, title: '« Nos compatriotes » : portrait de Théodore Girard paru dans Le Figaro (janvier 1899), reproduit par un autre journal ; suite p. 145' },
+      { page: 146, title: 'Arbre généalogique manuscrit de la famille Girard (postérieur à 1918)' },
     ],
   },
 ];
@@ -232,14 +233,15 @@ export const TABLE_OF_CONTENTS: readonly TocItem[] = TOC_SECTIONS.flatMap((secti
 
 /** Notes de lecture vérifiées sur les scans, affichées sur les pages concernées. */
 export const PAGE_NOTES: Readonly<Record<number, string>> = {
-  4: "Septembre 1872 : la circulaire de Victor Lefranc, ministre de l'Intérieur de Thiers, interdit « toutes manifestations, tous banquets » pour l'anniversaire du 4 Septembre.",
-  5: '« La peine de mort », article signé « TH. G. » et daté du 22 octobre 1872 (suite p. 6) : probablement le premier article de Théodore Girard.',
+  4: "17 septembre 1872 (date manuscrite) : article signé « S. » contre la seconde circulaire de Victor Lefranc, ministre de l'Intérieur, qui, après le 4 septembre, interdit « toutes manifestations, tous banquets » le 22, anniversaire de « la fondation de la 1re République Française ».",
+  5: '« La peine de mort », article signé « TH. G. » et daté à la plume du 22 octobre 1872 (suite p. 6).',
   55: "« Un exorcisme » : le 24 décembre 1874, un curé de Saintes vient asperger d'eau bénite une maison qui avait servi de loge maçonnique.",
   68: 'Lettre du père Alexandre de Saint-Joseph, prédicateur du carême 1875, datée du presbytère de Saint-Pierre de Saintes, 9 mars 1875.',
-  124: "Juillet 1876 : le tribunal correctionnel de Saintes juge pour escroquerie Mouroux, ancien instituteur, qui exploitait la renommée des violettes du « Père la Violette ».",
-  126: "Discours prononcé par Théodore Girard, adjoint au maire, au nom de l'administration municipale de Melle.",
+  124: "Juillet 1876 : Mouroux, « ancien instituteur à Saintes », comparaît devant le tribunal correctionnel de Saintes, « poursuivi comme escroc » : il avait collecté de l'argent par voie d'annonces en promettant les violettes et le secret du « Père la Violette », un cultivateur de Chaumet.",
+  126: "Discours manuscrit, non signé, « prononcé à [la] distribution de prix de l'école communale à Melle le 24 août 1880 » ; l'orateur préside « au nom de l'administration municipale ». Théodore Girard était alors adjoint au maire de Melle (élu en 1878, selon la biographie du Sénat).",
   133: 'Table du recueil rédigée et signée par Théodore Girard (p. 133 à 139).',
-  144: 'Portrait publié par Le Figaro quelques jours après le discours de Théodore Girard au Sénat du 19 janvier 1899 (suite p. 145).',
+  144: "Portrait de Théodore Girard paru dans Le Figaro « peu de jours après » son discours au Sénat du 19 janvier 1899, reproduit ici par un autre journal (rubrique « Nos compatriotes ») qui le dit « crayonné par un adversaire politique » (suite p. 145).",
+  146: "Arbre généalogique manuscrit de la famille Girard, rédigé après 1918 : il mentionne la mort de Théodore Girard.",
 };
 
 /** Titres de la table des matières qui commencent à la page donnée. */
@@ -260,6 +262,6 @@ export const sectionsForPage = (n: number): TocSection[] => {
 
 export const pageAlt = (n: number): string => {
   const titles = tocTitlesForPage(n);
-  const base = `Livre de combat de Théodore Girard, page ${n}`;
+  const base = `Recueil de Théodore Girard, page ${n}`;
   return titles.length ? `${base} : ${titles.join(' ; ')}` : base;
 };

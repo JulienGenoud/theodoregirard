@@ -16,7 +16,10 @@ if (!container) throw new Error('Élément #root introuvable');
 
 const app = (
   <StrictMode>
-    <App route={parseRoute(window.location.pathname)} />
+    <App
+      route={parseRoute(window.location.pathname)}
+      pageTextHtml={document.getElementById('texte-page')?.innerHTML}
+    />
   </StrictMode>
 );
 

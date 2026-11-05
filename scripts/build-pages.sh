@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Régénère les images WebP du « Livre de combat » à partir des PDF d'origine.
+# Régénère les images WebP du recueil à partir des PDF d'origine.
 #
 #   public/livre/pdf/N.pdf  ->  public/livre/pages/page-N-{1600,900,320}.webp
 #                           ->  src/data/pages.json (dimensions de chaque scan)
