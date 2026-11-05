@@ -75,3 +75,23 @@ Site documentaire consacré à **Théodore Girard (1851-1918)** : avoué et mair
    - Statuer sur le maintien des scans sous droits réservés (p. 141 Dictionnaire Jolly PUF 1968, p. 142 Le Populaire du Centre 1922, p. 146 arbre postérieur à 1918).
 3. **Piste non affirmative** :
    - Ne jamais affirmer comme un fait prouvé qu'Arthur Lanlair est Théodore Girard (simple hypothèse d'après l'entrée « Ma réponse au jésuite » p. 96).
+
+---
+
+## 6. Contrôle du 5 novembre 2026 (22 h)
+
+- Notes de suites vérifiées sur les scans : p. 6 (« TH. G. », « 22 octobre 1872 » à la plume) et p. 32 (« ARTHUR S.... », « 1er avril 1874 » à la plume) confirmées ; découpage des discours confirmé (le premier s'achève en haut de la p. 129, le second y commence).
+- Notes retirées ou réduites faute de preuve : p. 72 (lien avec la « Lettre Mouroux » non établi), p. 98 (fausse : l'article du Courrier se termine p. 97, signé « Z. A. »), p. 86 (partie « silence de La Volonté nationale » retirée), p. 101 (lien avec la « 5e revue » de la p. 100 non établi ; la page s'ouvre sur un nouvel en-tête de journal).
+- Questeur : années fixées d'après les tables nominatives du Sénat (1908, 1909, 1910, puis 1913-1918).
+- Transcription manuelle des pages manuscrites (126-140, 146) : non faite (coût). La table (p. 133-139) est déjà intégralement reprise dans `TOC_SECTIONS`.
+
+## 7. Droits : état et recommandations (à décider par le propriétaire)
+
+| Élément | Statut | Recommandation |
+| --- | --- | --- |
+| Coupures 1872-1899, manuscrits de 1880, table de Girard († 1918) | Domaine public | Rien à faire |
+| p. 141 : page du *Dictionnaire des parlementaires français* (J. Jolly, PUF, t. V, 1968) | Œuvre protégée | Retirer image, PDF et vignette de la p. 141, ou obtenir l'accord des PUF |
+| p. 142 : *Le Populaire du Centre*, 2 juillet 1922, signé Georges Girard | Protégée tant que l'auteur n'est pas mort depuis 70 ans (date inconnue) | Accord des ayants droit, sinon retrait |
+| p. 146 : arbre généalogique familial postérieur à 1918 | Document privé | Vérifier qu'il ne contient aucune donnée de personne vivante ; sinon flouter ou retirer |
+| Émission « Rue des hommes politiques » (Radio Accords, D. Breillat) + transcription | Droits non documentés ; la station n'existe plus sous ce nom, RCF Poitou diffuse des archives de Radio-Accords-Poitou | Accord écrit de RCF Poitou et de Dominique Breillat, sinon retirer MP3 et transcription |
+| Portrait vers 1915 (Wikimedia Commons, « famille Girard ») | Marqué domaine public, auteur inconnu | Conserver avec l'accord de la famille |

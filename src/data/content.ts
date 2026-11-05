@@ -75,7 +75,7 @@ export const BIOGRAPHY_EVENTS: TimelineEvent[] = [
     year: '1895',
     title: 'Sénateur des Deux-Sèvres',
     description:
-      "Élu sénateur le 24 février 1895, après la mort de Jean Macé, sénateur inamovible, par 513 voix sur 776 votants, réélu en 1900 et 1909, il siège jusqu'à sa mort, inscrit au groupe de l'Union républicaine. Il est secrétaire du Sénat (1902-1905) et, à plusieurs reprises, questeur (en 1903 selon Jolly, 1908 selon la radio et la p. 146, puis 1909-1910 et de 1914 à 1918).",
+      "Élu sénateur le 24 février 1895, après la mort de Jean Macé, sénateur inamovible, par 513 voix sur 776 votants, réélu en 1900 et 1909, il siège jusqu'à sa mort, inscrit au groupe de l'Union républicaine. Il est secrétaire du Sénat (1902-1905) et, questeur en 1908, 1909 et 1910, puis de 1913 à sa mort, d'après les tables nominatives du Sénat.",
     period: 'statesman',
   },
   {
