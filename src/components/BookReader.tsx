@@ -321,7 +321,7 @@ export default function BookReader({ page, onPageChange, isActive }: BookReaderP
               <span aria-live="polite">{caption}</span>
               <span className="mt-2 flex flex-wrap items-center justify-center gap-x-5 gap-y-1">
                 <a href={pageUrl(page)} className={linkClass(isFullscreen)}>
-                  <Link2 size={15} aria-hidden="true" /> Page dédiée (lien à partager)
+                  <Link2 size={15} aria-hidden="true" /> Ouvrir la page seule (texte, lien à partager)
                 </a>
                 <a href={pagePdf(page)} target="_blank" rel="noopener" className={linkClass(isFullscreen)}>
                   <FileDown size={15} aria-hidden="true" /> PDF original
