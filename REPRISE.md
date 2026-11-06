@@ -96,24 +96,57 @@ Site documentaire consacré à **Théodore Girard (1851-1918)** : avoué et mair
 | Émission « Rue des hommes politiques » (Radio Accords, D. Breillat) + transcription | Droits non documentés ; la station n'existe plus sous ce nom, RCF Poitou diffuse des archives de Radio-Accords-Poitou | Accord écrit de RCF Poitou et de Dominique Breillat, sinon retirer MP3 et transcription |
 | Portrait vers 1915 (fichier identique à celui du site du Sénat ; même cliché sur Wikimedia Commons, source « Famille Girard ») | Marqué domaine public sur Commons, auteur inconnu | Conserver avec l'accord de la famille ; corriger le crédit (section 8) |
 
-## 8. Modifications appliquées le 6 novembre 2026 (matin)
+## 8. Modifications appliquées le 6 novembre 2026 (matin) — Commit `1293132`
 
-**Publié et vérifié** :
-- Table manuscrite (p. 133-139) transcrite et affichée sous les pages dédiées (`content/manuscrits/p133.txt` à `p139.txt`).
-- Citation « Revue humouristique de la presse régionale » à l'orthographe imprimée (p. 87 et 101 ; l'entrée de la table pour la p. 87 garde « humoristique », orthographe de Girard).
-- Virgule parasite « et, questeur » supprimée.
-- Discours de 1880 (`content.ts` et `PAGE_NOTES[126]`) : formulation prudente, l'orateur n'étant pas formellement nommé dans les manuscrits (Girard en est vraisemblablement l'auteur).
-- Bonapartisme p. 9 (`content.ts`) : citation complète (« attribuait, lui aussi, à l'empereur, le progrès matériel qui se fit sous son gouvernement, mais il le rendait également responsable des désastres qui fondirent sur la patrie ») et « le journal rapporte ».
-- Boffinton (`content.ts`) : suppression du « y » (élection départementale et non restreinte à la haute Saintonge).
-- Crédits (`FOOTER.credits`) : portrait identifié au cliché officiel du Sénat (également sur Commons), p. 140 classée en « droits réservés ».
-- `seo.ts` : suppression de l'extraction automatique d'OCR brut entre guillemets pour les descriptions ; `BOOK` n'attribue plus la réunion matérielle des coupures à Girard et ne contient plus de `creator` erroné ; mention `[?]` préservée pour les entrées incertaines (p. 17).
-- Notes de lecture complétées pour p. 72 (suite « Lettre Mouroux ») et p. 98 (réponse du Courrier à Lanlair).
-- `content/radio/transcription-relue.txt` : mention `[sic : 1895]` ajoutée pour le ministère d'André Lebon.
+Toutes les modifications suivantes ont été validées (`npm run typecheck`, `npm run build`) et poussées sur `main` (commit `1293132f1c705bec32d86c96b5c27c7be133642a`) :
 
-## 9. Reste à faire / Suite des travaux
+- **Table manuscrite (p. 133-139)** : transcrite et affichée sous les pages dédiées (`content/manuscrits/p133.txt` à `p139.txt`).
+- **Citation « Revue humouristique de la presse régionale »** : orthographe imprimée rétablie (p. 87 et 101 ; l'entrée de la table pour la p. 87 garde « humoristique », orthographe originale de Girard).
+- **Virgule parasite « et, questeur »** : supprimée.
+- **Discours de 1880 (`content.ts` et `PAGE_NOTES[126]`)** : formulation prudente, l'orateur n'étant pas formellement nommé dans les manuscrits (Girard en est vraisemblablement l'auteur, mais ce n'est pas affirmé comme certitude absolue).
+- **Bonapartisme p. 9 (`content.ts`)** : citation complétée mot pour mot sur le scan (« attribuait, lui aussi, à l'empereur, le progrès matériel qui se fit sous son gouvernement, mais il le rendait également responsable des désastres qui fondirent sur la patrie ») et ajout de la mention « le journal rapporte ».
+- **Boffinton (`content.ts`)** : suppression du « y » (élection départementale et non restreinte à la haute Saintonge).
+- **Crédits (`FOOTER.credits`)** : portrait identifié au cliché officiel du Sénat (également présent sur Commons), scan de la p. 140 classé en « droits réservés ».
+- **SEO & Schema.org (`seo.ts`, `entry-server.tsx`)** :
+  - Suppression de l'extraction automatique d'OCR brut entre guillemets pour les balises `<meta name="description">` (pour éviter de propager des coquilles d'OCR dans Google).
+  - L'entité Schema.org `BOOK` n'attribue plus la réunion matérielle des coupures à Girard et ne contient plus de champ `creator` erroné.
+  - La mention `[?]` est préservée dans `tocTitlesForPage` pour les entrées incertaines (ex. p. 17).
+  - Suppression du paramètre inutilisé `pageExcerpt` dans `renderHead()`.
+- **Notes de lecture (`book.ts`)** :
+  - p. 72 : suite de la « Lettre Mouroux » (début p. 71).
+  - p. 98 : réponse du *Courrier* à Lanlair (« Quoique écrit en patois, dites-vous… »).
+- **Archive radio (`content/radio/transcription-relue.txt`)** : mention `[sic : 1895]` ajoutée pour le ministère d'André Lebon (nommé en réalité en 1896).
 
-1. **Vérification et publication des transcriptions manuscrites** :
-   - Pages 126-132 (les deux discours de 1880), p. 140 (note manuscrite) et p. 146 (arbre généalogique familial, attention : ne publier aucune donnée de personne vivante).
-2. **Image de partage Open Graph (`public/images/og-theodore-girard.jpg`)** :
-   - Régénérer ou modifier l'image pour remplacer la mention « Recueil de presse (1872-1876) en 146 pages » par « Recueil de 146 pages : coupures de presse (1872-1876) et documents ajoutés ».
-3. **Droits** : voir tableau section 7 (p. 141, 142, 146 et émission radio).
+---
+
+## 9. Architecture de navigation et question des URLs (`/#livre` vs `/recueil/`)
+
+### État technique actuel
+- **Routes déclarées (`src/routes.ts`)** :
+  - `/` (Accueil)
+  - `/recueil/page-1/` à `/recueil/page-146/` (146 pages statiques dédiées)
+- **Il n'existe aucune route `/recueil/`** dans l'application, ni dans `scripts/prerender.mjs`, ni dans `dist/sitemap.xml`.
+- `/#livre` est un ancrage HTML interne (`<section id="livre">`) sur la page d'accueil vers le composant `BookReader`. Les moteurs de recherche indexent l'URL racine `/` et ignorent le fragment `#livre`.
+- **Accès aux pages individuelles sans feuilleter page par page** :
+  - Saisie directe du numéro : le champ `Page [N] / 146` au-dessus du lecteur d'accueil permet de taper directement un numéro (ex. 146) pour y sauter.
+  - Index : le panneau déroulant des 146 vignettes dans `/#index` donne accès à chaque page en un clic.
+  - URL directe : `https://www.theodoregirard.fr/recueil/page-N/` (ou `/#page-N` pour ouvrir directement la page dans le lecteur d'accueil).
+  - Référencement : chaque page dédiée a sa propre balise canonique et son contenu textuel injecté au build dans `<div id="texte-page">`, référencé dans `sitemap.xml`.
+
+### Note sur la question d'un éventuel doublon
+- Actuellement, il n'y a **aucun doublon** car `/recueil/` n'existe pas.
+- Si une page `/recueil/` devait être créée ultérieurement, veiller à ce qu'elle apporte une valeur distincte (ex. galerie ou index complet séparé) et n'affiche pas simplement le même lecteur que l'accueil, afin d'éviter tout risque de cannibalisation SEO avec `/`.
+
+---
+
+## 10. Reste à faire / Suite des travaux (à revoir et compléter par Claude)
+
+1. **Vérification et publication des transcriptions manuscrites restantes** :
+   - Pages 126-132 (les deux discours de 1880).
+   - Page 140 (note manuscrite non datée).
+   - Page 146 (arbre généalogique familial : **règle absolue : ne publier aucune donnée concernant des personnes vivantes**).
+   - Déposer les fichiers validés dans `content/manuscrits/p<N>.txt` pour qu'ils soient automatiquement pris en compte par `scripts/prerender.mjs` à la place de l'OCR.
+2. **Image Open Graph (`public/images/og-theodore-girard.jpg`)** :
+   - Remplacer le sous-titre actuel « Recueil de presse (1872-1876) en 146 pages » par « Recueil de 146 pages : coupures de presse (1872-1876) et documents ajoutés ».
+3. **Droits juridiques** :
+   - Voir tableau section 7 (p. 141 PUF Jolly 1968, p. 142 Populaire du Centre 1922, p. 146 arbre privé, archive sonore Radio Accords / D. Breillat).
