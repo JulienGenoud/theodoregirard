@@ -75,13 +75,14 @@ export default function HomePage() {
       <Header active={activeSection} />
       <main id="contenu" tabIndex={-1}>
         <Hero />
+        {/* Le recueil et l'émission de radio, propres à ce site, viennent en premier. */}
+        <BookReader page={page} onPageChange={handleReaderPageChange} isActive={activeSection === 'livre'} />
+        <AudioSection />
         <Biography />
         <Context />
         <Stories onOpenPage={openPage} />
         <Keys />
-        <AudioSection />
         <Analysis />
-        <BookReader page={page} onPageChange={handleReaderPageChange} isActive={activeSection === 'livre'} />
         <BookIndex currentPage={page} onOpenPage={openPage} />
       </main>
       <Footer />

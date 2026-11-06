@@ -103,10 +103,10 @@ Toutes les modifications suivantes ont été validées (`npm run typecheck`, `np
 - **Table manuscrite (p. 133-139)** : transcrite et affichée sous les pages dédiées (`content/manuscrits/p133.txt` à `p139.txt`).
 - **Citation « Revue humouristique de la presse régionale »** : orthographe imprimée rétablie (p. 87 et 101 ; l'entrée de la table pour la p. 87 garde « humoristique », orthographe originale de Girard).
 - **Virgule parasite « et, questeur »** : supprimée.
-- **Discours de 1880 (`content.ts` et `PAGE_NOTES[126]`)** : formulation prudente, l'orateur n'étant pas formellement nommé dans les manuscrits (Girard en est vraisemblablement l'auteur, mais ce n'est pas affirmé comme certitude absolue).
+- **Discours de 1880 (`content.ts` et `PAGE_NOTES[126]`)** : discours non signés ; l'orateur n'est pas nommé, Girard (entré au conseil municipal en 1878) en est vraisemblablement l'auteur. Citation « l'enseign[emen]t » (abréviation du manuscrit, p. 132).
 - **Bonapartisme p. 9 (`content.ts`)** : citation complétée mot pour mot sur le scan (« attribuait, lui aussi, à l'empereur, le progrès matériel qui se fit sous son gouvernement, mais il le rendait également responsable des désastres qui fondirent sur la patrie ») et ajout de la mention « le journal rapporte ».
 - **Boffinton (`content.ts`)** : suppression du « y » (élection départementale et non restreinte à la haute Saintonge).
-- **Crédits (`FOOTER.credits`)** : portrait identifié au cliché officiel du Sénat (également présent sur Commons), scan de la p. 140 classé en « droits réservés ».
+- **Crédits (`FOOTER.credits`)** : portrait de photographe inconnu, image identique à celle du site du Sénat (même cliché sur Commons, source indiquée « Famille Girard ») ; note non datée de la p. 140 classée en « droits réservés » (corrigé l'après-midi : « cliché officiel du Sénat » n'était pas sourcé).
 - **SEO & Schema.org (`seo.ts`, `entry-server.tsx`)** :
   - Suppression de l'extraction automatique d'OCR brut entre guillemets pour les balises `<meta name="description">` (pour éviter de propager des coquilles d'OCR dans Google).
   - L'entité Schema.org `BOOK` n'attribue plus la réunion matérielle des coupures à Girard et ne contient plus de champ `creator` erroné.
@@ -114,8 +114,8 @@ Toutes les modifications suivantes ont été validées (`npm run typecheck`, `np
   - Suppression du paramètre inutilisé `pageExcerpt` dans `renderHead()`.
 - **Notes de lecture (`book.ts`)** :
   - p. 72 : suite de la « Lettre Mouroux » (début p. 71).
-  - p. 98 : réponse du *Courrier* à Lanlair (« Quoique écrit en patois, dites-vous… »).
-- **Archive radio (`content/radio/transcription-relue.txt`)** : mention `[sic : 1895]` ajoutée pour le ministère d'André Lebon (nommé en réalité en 1896).
+  - p. 98 : coupure annotée à la main « Courrier » (« Quoique écrit en patois, dites-vous… ») ; un lien avec Lanlair n'est pas établi.
+- **Archive radio (`content/radio/transcription-relue.txt`)** : mention `[sic : 1895]` ; André Lebon a été ministre du Commerce en 1895 (cabinet Ribot III), l'émission dit 1896.
 
 ---
 
@@ -139,14 +139,15 @@ Toutes les modifications suivantes ont été validées (`npm run typecheck`, `np
 
 ---
 
-## 10. Reste à faire / Suite des travaux (à revoir et compléter par Claude)
+## 10. Session du 6 novembre 2026 (après-midi)
 
-1. **Vérification et publication des transcriptions manuscrites restantes** :
-   - Pages 126-132 (les deux discours de 1880).
-   - Page 140 (note manuscrite non datée).
-   - Page 146 (arbre généalogique familial : **règle absolue : ne publier aucune donnée concernant des personnes vivantes**).
-   - Déposer les fichiers validés dans `content/manuscrits/p<N>.txt` pour qu'ils soient automatiquement pris en compte par `scripts/prerender.mjs` à la place de l'OCR.
-2. **Image Open Graph (`public/images/og-theodore-girard.jpg`)** :
-   - Remplacer le sous-titre actuel « Recueil de presse (1872-1876) en 146 pages » par « Recueil de 146 pages : coupures de presse (1872-1876) et documents ajoutés ».
-3. **Droits juridiques** :
-   - Voir tableau section 7 (p. 141 PUF Jolly 1968, p. 142 Populaire du Centre 1922, p. 146 arbre privé, archive sonore Radio Accords / D. Breillat).
+- Relecture des commits de Gemini (`1293132`, `c2b653b`). Corrigé : crédit du portrait (« cliché officiel du Sénat » non sourcé) ; discours de 1880 (« membre de l'administration municipale » non sourcé) ; note p. 98 (« qui répond à M. Lanlair » non établi) ; `BOOK` dans `seo.ts` (`name`, `temporalCoverage` « 1872/1876 » faux pour l'ensemble, description) ; rubriques dans les descriptions des pages (« rubrique « Union républicaine » de la table de Girard », et non le journal de la coupure) ; descriptions de l'accueil et du manifeste ; « les coupures du recueil » au lieu de « réunies par le jeune Girard » (non sourcé).
+- Note p. 72 confirmée : la lettre commencée p. 71 (« ne trou- » / « vant ») se termine p. 72, signée « Un abonné. » ; table : « Lettre Mouroux — 71 ».
+- Accueil : le recueil et l'émission de radio passent en tête (deux boutons dans le bandeau ; ordre des sections et du menu : Le recueil, Radio, Biographie, Contexte, Histoires, Clés de lecture, Analyse, Index).
+- `/recueil/` : aucune page à cette adresse (404) ; les 146 pages `/recueil/page-N/` ont chacune leur titre, leur texte et leur URL canonique : pas de doublon avec l'accueil.
+- Transcriptions manuscrites des p. 126-132, 140 et 146 : **arrêtées à la demande du propriétaire** (trop longues et coûteuses) ; ne pas relancer le workflow.
+
+## 11. Reste à faire
+
+1. Image Open Graph (`public/images/og-theodore-girard.jpg`) : remplacer « Recueil de presse (1872-1876) en 146 pages » par « Recueil de presse (1872-1876) et documents ajoutés · 146 pages ».
+2. Droits : voir section 7 (p. 141, p. 142, p. 146, émission de radio).

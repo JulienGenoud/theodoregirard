@@ -5,13 +5,13 @@ export interface NavItem {
 
 /** Sections affichées dans le menu, dans l'ordre de la page. */
 export const NAV_ITEMS: readonly NavItem[] = [
+  { id: 'livre', label: 'Le recueil' },
+  { id: 'radio', label: 'Radio' },
   { id: 'biographie', label: 'Biographie' },
   { id: 'contexte', label: 'Contexte' },
   { id: 'histoires', label: 'Histoires' },
   { id: 'cles-de-lecture', label: 'Clés de lecture' },
-  { id: 'radio', label: 'Radio' },
   { id: 'analyse', label: 'Analyse' },
-  { id: 'livre', label: 'Le recueil' },
   { id: 'index', label: 'Index' },
 ];
 

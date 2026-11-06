@@ -246,7 +246,7 @@ export const PAGE_NOTES: Readonly<Record<number, string>> = {
   72: 'Suite et fin de la lettre signée « Un abonné » que Girard intitule « Lettre Mouroux » dans sa table (début p. 71).',
   77: 'Suite et fin du compte rendu « Le Progrès en cour d\'assises » (début p. 76).',
   86: 'Suite et fin de « Ma réponse » à M. Loizeau (début p. 85).',
-  98: 'Coupure annotée à la main « Courrier », qui répond à M. Lanlair : « Quoique écrit en patois, dites-vous, vous avez cependant compris le sens de notre dernier article ».',
+  98: 'Coupure annotée à la main « Courrier » : « Quoique écrit en patois, dites-vous, vous avez cependant compris le sens de notre dernier article ».',
   101: '« Revue humouristique de la presse régionale » : affaire de duel entre MM. Savigny et Ossian Pic.',
   108: 'Suite et fin du compte rendu « Le procès des landes de Madion » (début p. 107).',
   124: "Juillet 1876 : Mouroux, « ancien instituteur à Saintes », comparaît devant le tribunal correctionnel de Saintes, « poursuivi comme escroc » (l'article indique « vendredi 6 juillet 1876 », le 6 juillet étant en réalité un jeudi) : il avait collecté de l'argent par voie d'annonces en promettant les violettes et le secret du « Père la Violette », un cultivateur de Chaumet.",

@@ -113,11 +113,11 @@ export const CONTEXT_POINTS = [
   },
   {
     title: 'Le bastion bonapartiste',
-    text: "Aux élections de 1876, la Charente-Inférieure élit cinq bonapartistes sur sept députés. Le baron Eschassériaux, qui préside la réunion parlementaire de l'Appel au peuple, « domine la scène politique de la haute Saintonge » (Wikipédia). En mai 1873, le bonapartiste Boffinton gagne une élection partielle « avec 3,000 voix de majorité », grâce aux campagnes, quand « toutes les villes » ont voté républicain (L'Indépendant, p. 16).",
+    text: "Aux élections de 1876, la Charente-Inférieure élit cinq bonapartistes sur sept députés. Le baron Eschassériaux, qui préside la réunion parlementaire de l'Appel au peuple, « domine la scène politique de la haute Saintonge » (Wikipédia). En mai 1873, le bonapartiste Boffinton gagne en Charente-Inférieure une élection partielle « avec 3,000 voix de majorité », grâce aux campagnes, quand « toutes les villes » ont voté républicain (L'Indépendant, p. 16).",
   },
   {
     title: "L'école avant les lois Ferry",
-    text: "Avant même les lois Ferry (1881-1882), l'orateur (vraisemblablement Girard, alors membre de l'administration municipale de Melle) préside en 1880 la distribution des prix de l'école communale « au nom de l'administration municipale ». Dans un second discours daté de 1880, il rappelle que « le Conseil municipal de Melle a lui-même voté […] la gratuité absolue de l'enseignement primaire » et exhorte les élèves à devenir « des citoyens utiles, honnêtes, honorables » (p. 126-132).",
+    text: "Avant même les lois Ferry (1881-1882), le recueil conserve deux discours manuscrits non signés, datés de 1880, prononcés à des distributions des prix à Melle. Le 24 août 1880, à l'école communale, l'orateur préside « au nom de l'administration municipale » ; dans le second discours, « de l'année 1880 », il rappelle que « le Conseil municipal de Melle a lui-même voté […] la gratuité absolue de l'enseign[emen]t primaire » et exhorte les élèves à devenir « des citoyens utiles, honnêtes, honorables » (p. 126-132). Entré au conseil municipal en 1878, Girard en est vraisemblablement l'auteur, mais aucun des deux textes ne le nomme.",
   },
 ];
 
@@ -200,7 +200,7 @@ export const VOCABULARY = [
 
 export const EVOLUTION_ANALYSIS = {
   title: 'Des polémiques de presse aux discours de 1880',
-  text: "De 1872 à 1877, les coupures réunies par le jeune Girard mêlent polémique et humour : on y lit une « Revue humouristique de la presse régionale » (p. 87) ou un discours bonapartiste parodié à coups de « gouvernement de l'Emperrrreur » (p. 54). Suivent deux discours manuscrits datés de 1880 (p. 126-132), pour des distributions des prix à Melle, où l'orateur préside « au nom de l'administration municipale » et salue « une ère nouvelle » où « régneront la paix, l'union, la concorde au sein de la République française » ; puis la table manuscrite que Girard signe (p. 133-139). En 1895, il entre au Sénat.",
+  text: "De 1872 à 1877, les coupures du recueil mêlent polémique et humour : on y lit une « Revue humouristique de la presse régionale » (p. 87) ou un discours bonapartiste parodié à coups de « gouvernement de l'Emperrrreur » (p. 54). Suivent deux discours manuscrits datés de 1880 (p. 126-132), pour des distributions des prix à Melle, où l'orateur préside « au nom de l'administration municipale » et salue « une ère nouvelle » où « régneront la paix, l'union, la concorde au sein de la République française » ; puis la table manuscrite que Girard signe (p. 133-139). En 1895, il entre au Sénat.",
 };
 
 export const ANALYSIS_INTRO = {
@@ -269,7 +269,7 @@ export const FOOTER = {
   about:
     'Site consacré à Théodore Girard (1851-1918) et au recueil de coupures de presse (1872-1876) dont il a dressé et signé la table.',
   credits:
-    "Coupures et manuscrits du XIXe siècle : domaine public ; documents postérieurs ou non datés (p. 140, 141, 142 et 146) : droits réservés. Portrait : Théodore Girard vers 1915, cliché officiel du Sénat (également sur Wikimedia Commons, coll. Famille Girard). Émission radio : « Rue des hommes politiques », Dominique Breillat, Radio Accords.",
+    "Coupures et manuscrits du XIXe siècle : domaine public ; documents du XXe siècle (p. 141, 142 et 146) et note manuscrite non datée (p. 140) : droits réservés. Portrait : Théodore Girard vers 1915, photographe inconnu ; image reprise du site du Sénat (même cliché sur Wikimedia Commons, source indiquée : « Famille Girard »). Émission radio : « Rue des hommes politiques », Dominique Breillat, Radio Accords.",
 };
 
 export const EXTERNAL_LINKS = [

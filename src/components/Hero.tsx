@@ -1,5 +1,6 @@
-import { BookOpen, Scroll } from 'lucide-react';
-import { HERO, PORTRAIT } from '../data/content';
+import { BookOpen, Headphones } from 'lucide-react';
+import { TOTAL_PAGES } from '../data/book';
+import { HERO, PORTRAIT, RADIO } from '../data/content';
 
 export default function Hero() {
   return (
@@ -28,17 +29,23 @@ export default function Hero() {
           <div className="flex flex-col justify-center gap-4 sm:flex-row lg:justify-start">
             <a
               href="#livre"
-              className="group flex items-center justify-center gap-2 rounded bg-stone-900 px-8 py-4 text-stone-50 shadow-lg transition-all hover:bg-stone-800"
+              className="group flex items-center justify-center gap-3 rounded bg-stone-900 px-8 py-4 text-left text-stone-50 shadow-lg transition-all hover:bg-stone-800"
             >
-              <BookOpen size={20} className="transition-transform group-hover:scale-110" aria-hidden="true" />
-              Feuilleter le recueil
+              <BookOpen size={22} className="shrink-0 transition-transform group-hover:scale-110" aria-hidden="true" />
+              <span>
+                <span className="block font-semibold">Feuilleter le recueil</span>
+                <span className="block text-sm text-stone-300">{TOTAL_PAGES} pages numérisées</span>
+              </span>
             </a>
             <a
-              href="#histoires"
-              className="flex items-center justify-center gap-2 rounded border border-stone-300 bg-white px-8 py-4 text-stone-700 shadow-sm transition-all hover:bg-stone-50"
+              href="#radio"
+              className="group flex items-center justify-center gap-3 rounded border border-amber-300 bg-amber-50 px-8 py-4 text-left text-stone-800 shadow-sm transition-all hover:bg-amber-100"
             >
-              <Scroll size={20} aria-hidden="true" />
-              Histoires tirées du recueil
+              <Headphones size={22} className="shrink-0 transition-transform group-hover:scale-110" aria-hidden="true" />
+              <span>
+                <span className="block font-semibold">Écouter l'émission de radio</span>
+                <span className="block text-sm text-stone-600">{`« ${RADIO.series} », ${RADIO.station}`}</span>
+              </span>
             </a>
           </div>
         </div>

@@ -74,13 +74,12 @@ const PERSON = {
 const BOOK = {
   '@type': 'Book',
   '@id': BOOK_ID,
-  name: 'Recueil de coupures de presse de Théodore Girard (1872-1876)',
+  name: 'Recueil de Théodore Girard',
   description:
-    "Recueil de 146 pages : coupures de presse de la IIIe République naissante (L'Indépendant, 1872-1874 ; L'Union républicaine, 1875-1876), dont Théodore Girard a dressé et signé la table manuscrite, complété de documents ajoutés plus tard.",
+    "Recueil de coupures de presse (1872-1876) que Théodore Girard a répertoriées dans une table manuscrite signée, sous les rubriques « Indépendant » et « Union républicaine », suivies de documents ajoutés, dont certains postérieurs à sa mort.",
   about: { '@id': PERSON_ID },
   inLanguage: 'fr',
   numberOfPages: TOTAL_PAGES,
-  temporalCoverage: '1872/1876',
   url: `${SITE_URL}/#livre`,
   isAccessibleForFree: true,
 };
@@ -88,7 +87,7 @@ const BOOK = {
 function homeHead(): HeadData {
   const title = 'Théodore Girard (1851-1918) – Biographie et recueil de presse';
   const description =
-    'Théodore Girard (1851-1918), maire de Melle, sénateur des Deux-Sèvres et garde des Sceaux : biographie et recueil de coupures de presse (1872-1876) à feuilleter.';
+    'Théodore Girard (1851-1918), maire de Melle, sénateur des Deux-Sèvres et garde des Sceaux : son recueil de 146 pages à feuilleter, une émission de radio et sa biographie.';
   return {
     title,
     description,
@@ -145,7 +144,14 @@ function homeHead(): HeadData {
 function pageHead(n: number): HeadData {
   const titles = tocTitlesForPage(n);
   const sections = sectionsForPage(n);
-  const sectionLabel = sections.map((s) => `${s.title} (${s.period})`).join(' / ');
+  // Rubrique de la table de Girard (« Indépendant », « Union républicaine ») : pas forcément le journal de la coupure.
+  const sectionLabel = sections
+    .map((s) =>
+      s.id === 'fin-du-recueil'
+        ? `${s.title} (${s.period})`
+        : `rubrique « ${s.title.replace(/^L['’]/, '')} » de la table de Girard (${s.period})`,
+    )
+    .join(' / ');
   const info = pageInfo(n);
   const path = pageUrl(n);
 
