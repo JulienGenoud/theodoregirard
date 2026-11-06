@@ -19,7 +19,7 @@ export function render(
       <App route={route} pageTextHtml={extras.pageTextHtml} pageTextKind={extras.pageTextKind} />
     </StrictMode>,
   );
-  return { html, head: renderHead(route, extras.pageExcerpt) };
+  return { html, head: renderHead(route) };
 }
 
 /** Images à déclarer dans le sitemap pour une adresse. */

@@ -243,12 +243,14 @@ export const PAGE_NOTES: Readonly<Record<number, string>> = {
   55: "« Un exorcisme » : le 24 décembre 1874, un curé de Saintes vient asperger d'eau bénite une maison qui avait servi de loge maçonnique.",
   59: 'Suite et fin du compte rendu « La Chose en police correctionnelle » (début p. 58).',
   68: 'Lettre du père Alexandre de Saint-Joseph, prédicateur du carême 1875, datée du presbytère de Saint-Pierre de Saintes, 9 mars 1875.',
+  72: 'Suite et fin de la lettre signée « Un abonné » que Girard intitule « Lettre Mouroux » dans sa table (début p. 71).',
   77: 'Suite et fin du compte rendu « Le Progrès en cour d\'assises » (début p. 76).',
   86: 'Suite et fin de « Ma réponse » à M. Loizeau (début p. 85).',
+  98: 'Coupure annotée à la main « Courrier », qui répond à M. Lanlair : « Quoique écrit en patois, dites-vous, vous avez cependant compris le sens de notre dernier article ».',
   101: '« Revue humouristique de la presse régionale » : affaire de duel entre MM. Savigny et Ossian Pic.',
   108: 'Suite et fin du compte rendu « Le procès des landes de Madion » (début p. 107).',
   124: "Juillet 1876 : Mouroux, « ancien instituteur à Saintes », comparaît devant le tribunal correctionnel de Saintes, « poursuivi comme escroc » (l'article indique « vendredi 6 juillet 1876 », le 6 juillet étant en réalité un jeudi) : il avait collecté de l'argent par voie d'annonces en promettant les violettes et le secret du « Père la Violette », un cultivateur de Chaumet.",
-  126: "Discours manuscrit, non signé, « prononcé à [la] distribution de prix de l'école communale à Melle le 24 août 1880 » ; l'orateur préside « au nom de l'administration municipale ». Théodore Girard était alors adjoint au maire de Melle (élu en 1878 selon la biographie du Sénat, ou nommé le 9 février 1881 selon l'arbre p. 146).",
+  126: "Discours manuscrit, non signé, « prononcé à [la] distribution de prix de l'école communale à Melle le 24 août 1880 » ; l'orateur, non nommé (vraisemblablement Girard), préside « au nom de l'administration municipale ». Girard était alors membre du conseil municipal de Melle (adjoint élu en 1878 selon le Sénat, ou nommé le 9 février 1881 selon l'arbre p. 146).",
   127: 'Suite du discours manuscrit prononcé à la distribution des prix de Melle le 24 août 1880 (début p. 126, suite p. 128 et fin p. 129).',
   128: 'Suite du discours manuscrit du 24 août 1880 (début p. 126, fin p. 129).',
   130: 'Suite du second discours manuscrit de 1880 (début p. 129, fin p. 132).',
@@ -269,7 +271,8 @@ export const PAGE_NOTES: Readonly<Record<number, string>> = {
 /** Titres de la table des matières qui commencent à la page donnée. */
 export const tocEntriesForPage = (n: number): TocItem[] => TABLE_OF_CONTENTS.filter((item) => item.page === n);
 
-export const tocTitlesForPage = (n: number): string[] => tocEntriesForPage(n).map((item) => item.title);
+export const tocTitlesForPage = (n: number): string[] =>
+  tocEntriesForPage(n).map((item) => (item.uncertain ? `${item.title} [?]` : item.title));
 
 /** Partie(s) du recueil auxquelles appartient une page. */
 export const sectionsForPage = (n: number): TocSection[] => {

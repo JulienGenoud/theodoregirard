@@ -76,8 +76,7 @@ const BOOK = {
   '@id': BOOK_ID,
   name: 'Recueil de coupures de presse de Théodore Girard (1872-1876)',
   description:
-    "Recueil de coupures de presse réunies par Théodore Girard (L'Indépendant, 1872-1874 ; L'Union républicaine, 1875-1876), avec sa table manuscrite et des documents ajoutés, dont certains postérieurs à sa mort.",
-  creator: { '@id': PERSON_ID },
+    "Recueil de 146 pages : coupures de presse de la IIIe République naissante (L'Indépendant, 1872-1874 ; L'Union républicaine, 1875-1876), dont Théodore Girard a dressé et signé la table manuscrite, complété de documents ajoutés plus tard.",
   about: { '@id': PERSON_ID },
   inLanguage: 'fr',
   numberOfPages: TOTAL_PAGES,
@@ -143,7 +142,7 @@ function homeHead(): HeadData {
   };
 }
 
-function pageHead(n: number, excerpt?: string): HeadData {
+function pageHead(n: number): HeadData {
   const titles = tocTitlesForPage(n);
   const sections = sectionsForPage(n);
   const sectionLabel = sections.map((s) => `${s.title} (${s.period})`).join(' / ');
@@ -157,11 +156,9 @@ function pageHead(n: number, excerpt?: string): HeadData {
   const description = truncate(
     note
       ? `Page ${n} du recueil de Théodore Girard. ${note}`
-      : !titles.length && excerpt
-        ? `Page ${n} du recueil de Théodore Girard : «\u00a0${excerpt}\u00a0»`
-        : `Page ${n} sur ${TOTAL_PAGES} du recueil de Théodore Girard, ${sectionLabel}${
-          titles.length ? ` : ${titles.join(', ')}` : ''
-        }. Scan haute définition.`,
+      : `Page ${n} sur ${TOTAL_PAGES} du recueil de Théodore Girard, ${sectionLabel}${
+        titles.length ? ` : ${titles.join(', ')}` : ''
+      }. Scan haute définition.`,
     160,
   );
 
@@ -205,8 +202,8 @@ function pageHead(n: number, excerpt?: string): HeadData {
 }
 
 /** Bloc HTML à insérer dans <head> pour l'adresse donnée. */
-export function renderHead(route: Route, pageExcerpt?: string): string {
-  const data = route.kind === 'page' ? pageHead(route.page, pageExcerpt) : homeHead();
+export function renderHead(route: Route): string {
+  const data = route.kind === 'page' ? pageHead(route.page) : homeHead();
   const url = `${SITE_URL}${data.path}`;
   return [
     `<title>${escapeHtml(data.title)}</title>`,

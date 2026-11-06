@@ -96,31 +96,24 @@ Site documentaire consacré à **Théodore Girard (1851-1918)** : avoué et mair
 | Émission « Rue des hommes politiques » (Radio Accords, D. Breillat) + transcription | Droits non documentés ; la station n'existe plus sous ce nom, RCF Poitou diffuse des archives de Radio-Accords-Poitou | Accord écrit de RCF Poitou et de Dominique Breillat, sinon retirer MP3 et transcription |
 | Portrait vers 1915 (fichier identique à celui du site du Sénat ; même cliché sur Wikimedia Commons, source « Famille Girard ») | Marqué domaine public sur Commons, auteur inconnu | Conserver avec l'accord de la famille ; corriger le crédit (section 8) |
 
-## 8. Pause du 6 novembre 2026 (matin) : reprise à faire
+## 8. Modifications appliquées le 6 novembre 2026 (matin)
 
-**Publié** : table manuscrite (p. 133-139) ; citation « Revue humouristique de la presse régionale » à l'orthographe imprimée (p. 87 et 101 ; l'entrée de la table pour la p. 87 garde « humoristique », orthographe de Girard) ; virgule parasite « et, questeur » supprimée.
+**Publié et vérifié** :
+- Table manuscrite (p. 133-139) transcrite et affichée sous les pages dédiées (`content/manuscrits/p133.txt` à `p139.txt`).
+- Citation « Revue humouristique de la presse régionale » à l'orthographe imprimée (p. 87 et 101 ; l'entrée de la table pour la p. 87 garde « humoristique », orthographe de Girard).
+- Virgule parasite « et, questeur » supprimée.
+- Discours de 1880 (`content.ts` et `PAGE_NOTES[126]`) : formulation prudente, l'orateur n'étant pas formellement nommé dans les manuscrits (Girard en est vraisemblablement l'auteur).
+- Bonapartisme p. 9 (`content.ts`) : citation complète (« attribuait, lui aussi, à l'empereur, le progrès matériel qui se fit sous son gouvernement, mais il le rendait également responsable des désastres qui fondirent sur la patrie ») et « le journal rapporte ».
+- Boffinton (`content.ts`) : suppression du « y » (élection départementale et non restreinte à la haute Saintonge).
+- Crédits (`FOOTER.credits`) : portrait identifié au cliché officiel du Sénat (également sur Commons), p. 140 classée en « droits réservés ».
+- `seo.ts` : suppression de l'extraction automatique d'OCR brut entre guillemets pour les descriptions ; `BOOK` n'attribue plus la réunion matérielle des coupures à Girard et ne contient plus de `creator` erroné ; mention `[?]` préservée pour les entrées incertaines (p. 17).
+- Notes de lecture complétées pour p. 72 (suite « Lettre Mouroux ») et p. 98 (réponse du Courrier à Lanlair).
+- `content/radio/transcription-relue.txt` : mention `[sic : 1895]` ajoutée pour le ministère d'André Lebon.
 
-**Interrompu pour économiser les crédits** (relancer ; les agents terminés sont en cache) :
+## 9. Reste à faire / Suite des travaux
 
-```
-Workflow({scriptPath: "/Users/julien/.claude/projects/-Users-julien-theo/99239a5d-5857-49fd-9159-c41366851218/workflows/scripts/manuscripts-and-final-recheck-wf_27520d6b-03a.js", resumeFromRunId: "wf_27520d6b-03a"})
-```
-
-- Vérification indépendante des transcriptions des p. 126-132, 140 et 146 (transcrites mais non vérifiées : rien de publié). p. 146 : ne publier aucune donnée de personne vivante.
-- Contre-vérification des textes « Histoires », « Analyse » et « Le recueil ».
-- Résultats bruts : `/Users/julien/.claude/projects/-Users-julien-theo/99239a5d-5857-49fd-9159-c41366851218/subagents/workflows/wf_27520d6b-03a/journal.jsonl`.
-
-**Corrections relevées (preuves sur scans ou sources), à appliquer** :
-
-1. Discours de 1880 (`content.ts`, contexte « L'école avant les lois Ferry », et `PAGE_NOTES[126]`) : les deux discours (p. 126-129 et 129-132) ne sont ni signés ni attribués. Ne pas écrire comme un fait que Girard, « adjoint au maire », les prononce (adjoint en 1878 selon Jolly, le 9 février 1881 selon l'arbre p. 146) : l'orateur n'est pas nommé, Girard en est vraisemblablement l'auteur.
-2. Bonapartisme, p. 9 (`content.ts`, clés de lecture) : citer la phrase entière, « attribuait, lui aussi, à l'empereur, le progrès matériel qui se fit sous son gouvernement, mais il le rendait également responsable des désastres qui fondirent sur la patrie », et écrire « le journal rapporte » au lieu de « le journal admet ».
-3. Boffinton (`content.ts`, contexte « Le bastion bonapartiste ») : l'élection partielle du 11 mai 1873 porte sur toute la Charente-Inférieure ; supprimer le « y » qui la situe en haute Saintonge.
-4. Crédits (`FOOTER.credits`) :
-   - Le portrait est le fichier du site du Sénat (`https://www.senat.fr/sen3Rimg/girard_theodore1638r3_carre.jpg`, identique octet pour octet) ; le même cliché est sur Commons (« Théodore Girard 2.jpg », source « Famille Girard »).
-   - La p. 140 (note manuscrite non datée ; selon le contrôle, écriture différente de celle de la table) n'est pas datée du XIXe siècle : la classer en « droits réservés ».
-5. `seo.ts`, descriptions des pages du recueil :
-   - Elles citent entre « » l'OCR brut, avec des fautes (p. 72 et p. 98). Utiliser la note, le titre de la table ou une phrase neutre, jamais l'OCR entre guillemets.
-   - p. 17 : garder « [?] » (entrée incertaine) dans le titre et la description.
-6. `seo.ts`, `BOOK` : ne pas écrire que Girard a « réuni » les coupures, seule la table est de lui (signée p. 139) ; retirer `creator`.
-7. `public/images/og-theodore-girard.jpg` : remplacer « Recueil de presse (1872-1876) en 146 pages » par « Recueil de 146 pages : coupures de presse (1872-1876) et documents ajoutés ».
-8. `content/radio/transcription-relue.txt` : « ministre du Commerce et de l'Industrie en 1896 [sic : 1895] ». André Lebon a été ministre en 1895, dans le cabinet Ribot III ; l'émission se trompe, la transcription reste fidèle.
+1. **Vérification et publication des transcriptions manuscrites** :
+   - Pages 126-132 (les deux discours de 1880), p. 140 (note manuscrite) et p. 146 (arbre généalogique familial, attention : ne publier aucune donnée de personne vivante).
+2. **Image de partage Open Graph (`public/images/og-theodore-girard.jpg`)** :
+   - Régénérer ou modifier l'image pour remplacer la mention « Recueil de presse (1872-1876) en 146 pages » par « Recueil de 146 pages : coupures de presse (1872-1876) et documents ajoutés ».
+3. **Droits** : voir tableau section 7 (p. 141, 142, 146 et émission radio).

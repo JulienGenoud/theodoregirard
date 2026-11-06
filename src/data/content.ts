@@ -113,17 +113,17 @@ export const CONTEXT_POINTS = [
   },
   {
     title: 'Le bastion bonapartiste',
-    text: "Aux élections de 1876, la Charente-Inférieure élit cinq bonapartistes sur sept députés. Le baron Eschassériaux, qui préside la réunion parlementaire de l'Appel au peuple, « domine la scène politique de la haute Saintonge » (Wikipédia). En mai 1873, le bonapartiste Boffinton y gagne une élection partielle « avec 3,000 voix de majorité », grâce aux campagnes, quand « toutes les villes » ont voté républicain (L'Indépendant, p. 16).",
+    text: "Aux élections de 1876, la Charente-Inférieure élit cinq bonapartistes sur sept députés. Le baron Eschassériaux, qui préside la réunion parlementaire de l'Appel au peuple, « domine la scène politique de la haute Saintonge » (Wikipédia). En mai 1873, le bonapartiste Boffinton gagne une élection partielle « avec 3,000 voix de majorité », grâce aux campagnes, quand « toutes les villes » ont voté républicain (L'Indépendant, p. 16).",
   },
   {
     title: "L'école avant les lois Ferry",
-    text: "Avant même les lois Ferry (1881-1882), Girard, adjoint au maire de Melle, préside en 1880 la distribution des prix de l'école communale « au nom de l'administration municipale ». Dans un second discours daté de 1880, il rappelle que « le Conseil municipal de Melle a lui-même voté […] la gratuité absolue de l'enseignement primaire » et exhorte les élèves à devenir « des citoyens utiles, honnêtes, honorables » (p. 126-132).",
+    text: "Avant même les lois Ferry (1881-1882), l'orateur (vraisemblablement Girard, alors membre de l'administration municipale de Melle) préside en 1880 la distribution des prix de l'école communale « au nom de l'administration municipale ». Dans un second discours daté de 1880, il rappelle que « le Conseil municipal de Melle a lui-même voté […] la gratuité absolue de l'enseignement primaire » et exhorte les élèves à devenir « des citoyens utiles, honnêtes, honorables » (p. 126-132).",
   },
 ];
 
 export const BONAPARTIST_CONTEXT = {
   title: 'Le bonapartisme dans les Charentes',
-  text: "Sous le Second Empire, le commerce des eaux-de-vie charentaises connaît des « records d'expédition » avec « l'essor du chemin de fer, de la navigation à vapeur et de la signature de traités de commerce » (Gilles Bernard, Académie d'Angoumois), dont le traité franco-britannique du 23 janvier 1860, dit Cobden-Chevalier. Les bonapartistes vantent les « vingt années de prospérité » de l'Empire, « éternel thème des bonapartistes », écrit L'Indépendant en février 1873 ; le journal admet qu'un paysan « attribuait, lui aussi, à l'empereur, le progrès matériel qui se fit sous son gouvernement » (p. 9).",
+  text: "Sous le Second Empire, le commerce des eaux-de-vie charentaises connaît des « records d'expédition » avec « l'essor du chemin de fer, de la navigation à vapeur et de la signature de traités de commerce » (Gilles Bernard, Académie d'Angoumois), dont le traité franco-britannique du 23 janvier 1860, dit Cobden-Chevalier. Les bonapartistes vantent les « vingt années de prospérité » de l'Empire, « éternel thème des bonapartistes », écrit L'Indépendant en février 1873 ; le journal rapporte qu'un paysan « attribuait, lui aussi, à l'empereur, le progrès matériel qui se fit sous son gouvernement, mais il le rendait également responsable des désastres qui fondirent sur la patrie » (p. 9).",
 };
 
 export const STORIES_INTRO = {
@@ -269,7 +269,7 @@ export const FOOTER = {
   about:
     'Site consacré à Théodore Girard (1851-1918) et au recueil de coupures de presse (1872-1876) dont il a dressé et signé la table.',
   credits:
-    "Coupures et manuscrits du XIXe siècle : domaine public ; documents du XXe siècle (p. 141, 142 et 146) : droits réservés. Portrait : Théodore Girard vers 1915, collection de la famille Girard (Wikimedia Commons). Émission radio : « Rue des hommes politiques », Dominique Breillat, Radio Accords.",
+    "Coupures et manuscrits du XIXe siècle : domaine public ; documents postérieurs ou non datés (p. 140, 141, 142 et 146) : droits réservés. Portrait : Théodore Girard vers 1915, cliché officiel du Sénat (également sur Wikimedia Commons, coll. Famille Girard). Émission radio : « Rue des hommes politiques », Dominique Breillat, Radio Accords.",
 };
 
 export const EXTERNAL_LINKS = [
