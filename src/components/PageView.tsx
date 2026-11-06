@@ -67,7 +67,15 @@ function PageNavigation({ page, position }: { page: number; position: 'haut' | '
 }
 
 /** Page dédiée (indexable) à une page du recueil. */
-export default function PageView({ page, textHtml }: { page: number; textHtml?: string }) {
+export default function PageView({
+  page,
+  textHtml,
+  textKind = 'ocr',
+}: {
+  page: number;
+  textHtml?: string;
+  textKind?: 'ocr' | 'manuscrit';
+}) {
   const info = pageInfo(page);
   const entries = tocEntriesForPage(page);
   const sections = sectionsForPage(page);
@@ -165,14 +173,19 @@ export default function PageView({ page, textHtml }: { page: number; textHtml?: 
           {textHtml ? (
             <details className="group mt-10 rounded-lg border border-stone-200 bg-white">
               <summary className="cursor-pointer list-none rounded-lg px-6 py-4 font-serif text-xl text-stone-900 hover:bg-stone-50 [&::-webkit-details-marker]:hidden">
-                Texte de la page{' '}
-                <span className="font-sans text-sm text-stone-600">(reconnaissance automatique, non relue)</span>
+                {textKind === 'manuscrit' ? 'Transcription du manuscrit' : 'Texte de la page'}{' '}
+                <span className="font-sans text-sm text-stone-600">
+                  {textKind === 'manuscrit'
+                    ? '(relue et vérifiée ; [?] = lecture incertaine)'
+                    : '(reconnaissance automatique, non relue)'}
+                </span>
                 <span className="ml-2 inline-block text-sm text-stone-600 transition-transform group-open:rotate-180" aria-hidden="true">
                   ▾
                 </span>
               </summary>
               <div
                 id="texte-page"
+                data-kind={textKind}
                 className="space-y-3 px-6 pb-6 font-serif leading-relaxed text-stone-800"
                 dangerouslySetInnerHTML={{ __html: textHtml }}
               />

@@ -19,6 +19,7 @@ const app = (
     <App
       route={parseRoute(window.location.pathname)}
       pageTextHtml={document.getElementById('texte-page')?.innerHTML}
+      pageTextKind={document.getElementById('texte-page')?.dataset.kind === 'manuscrit' ? 'manuscrit' : 'ocr'}
     />
   </StrictMode>
 );

@@ -23,6 +23,16 @@ const escapeHtml = (s) => s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace
 async function pageTextFor(urlPath) {
   const match = /\/page-(\d+)\/$/.exec(urlPath);
   if (!match) return {};
+  // Priorité à la transcription vérifiée d'une page manuscrite, sinon l'OCR.
+  try {
+    const manu = (await readFile(path.join(root, 'content/manuscrits', `p${match[1]}.txt`), 'utf8')).trim();
+    if (manu) {
+      const lines = manu.split('\n').map((l) => escapeHtml(l.trim()).replace(/\^([^\s.,;:—)]+)/g, '<sup>$1</sup>'));
+      return { pageTextHtml: `<p>${lines.join('<br>')}</p>`, pageTextKind: 'manuscrit' };
+    }
+  } catch {
+    // pas de transcription manuscrite pour cette page
+  }
   let text;
   try {
     text = (await readFile(path.join(root, 'content/ocr', `p${match[1]}.txt`), 'utf8')).trim();
@@ -34,6 +44,7 @@ async function pageTextFor(urlPath) {
   const first = paragraphs.find((p) => p.length > 60) ?? paragraphs[0];
   return {
     pageTextHtml: paragraphs.map((p) => `<p>${escapeHtml(p)}</p>`).join(''),
+    pageTextKind: 'ocr',
     pageExcerpt: first.length > 100 ? `${first.slice(0, 100).replace(/\s+\S*$/, '')}…` : first,
   };
 }

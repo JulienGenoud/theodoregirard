@@ -11,12 +11,12 @@ export { ALL_PATHS };
 /** Rendu HTML statique d'une adresse, injecté dans le gabarit au build. */
 export function render(
   urlPath: string,
-  extras: { pageTextHtml?: string; pageExcerpt?: string } = {},
+  extras: { pageTextHtml?: string; pageExcerpt?: string; pageTextKind?: 'ocr' | 'manuscrit' } = {},
 ): { html: string; head: string } {
   const route = parseRoute(urlPath);
   const html = renderToString(
     <StrictMode>
-      <App route={route} pageTextHtml={extras.pageTextHtml} />
+      <App route={route} pageTextHtml={extras.pageTextHtml} pageTextKind={extras.pageTextKind} />
     </StrictMode>,
   );
   return { html, head: renderHead(route, extras.pageExcerpt) };

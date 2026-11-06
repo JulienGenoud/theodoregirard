@@ -75,7 +75,7 @@ export const BIOGRAPHY_EVENTS: TimelineEvent[] = [
     year: '1895',
     title: 'Sénateur des Deux-Sèvres',
     description:
-      "Élu sénateur le 24 février 1895, après la mort de Jean Macé, sénateur inamovible, par 513 voix sur 776 votants, réélu en 1900 et 1909, il siège jusqu'à sa mort, inscrit au groupe de l'Union républicaine. Il est secrétaire du Sénat (1902-1905) et, questeur en 1908, 1909 et 1910, puis de 1913 à sa mort, d'après les tables nominatives du Sénat.",
+      "Élu sénateur le 24 février 1895, après la mort de Jean Macé, sénateur inamovible, par 513 voix sur 776 votants, réélu en 1900 et 1909, il siège jusqu'à sa mort, inscrit au groupe de l'Union républicaine. Il est secrétaire du Sénat (1902-1905) et questeur en 1908, 1909 et 1910, puis de 1913 à sa mort, d'après les tables nominatives du Sénat.",
     period: 'statesman',
   },
   {
@@ -200,7 +200,7 @@ export const VOCABULARY = [
 
 export const EVOLUTION_ANALYSIS = {
   title: 'Des polémiques de presse aux discours de 1880',
-  text: "De 1872 à 1877, les coupures réunies par le jeune Girard mêlent polémique et humour : on y lit une « Revue humoristique de la presse régionale » (p. 87) ou un discours bonapartiste parodié à coups de « gouvernement de l'Emperrrreur » (p. 54). Suivent deux discours manuscrits datés de 1880 (p. 126-132), pour des distributions des prix à Melle, où l'orateur préside « au nom de l'administration municipale » et salue « une ère nouvelle » où « régneront la paix, l'union, la concorde au sein de la République française » ; puis la table manuscrite que Girard signe (p. 133-139). En 1895, il entre au Sénat.",
+  text: "De 1872 à 1877, les coupures réunies par le jeune Girard mêlent polémique et humour : on y lit une « Revue humouristique de la presse régionale » (p. 87) ou un discours bonapartiste parodié à coups de « gouvernement de l'Emperrrreur » (p. 54). Suivent deux discours manuscrits datés de 1880 (p. 126-132), pour des distributions des prix à Melle, où l'orateur préside « au nom de l'administration municipale » et salue « une ère nouvelle » où « régneront la paix, l'union, la concorde au sein de la République française » ; puis la table manuscrite que Girard signe (p. 133-139). En 1895, il entre au Sénat.",
 };
 
 export const ANALYSIS_INTRO = {

@@ -245,7 +245,7 @@ export const PAGE_NOTES: Readonly<Record<number, string>> = {
   68: 'Lettre du père Alexandre de Saint-Joseph, prédicateur du carême 1875, datée du presbytère de Saint-Pierre de Saintes, 9 mars 1875.',
   77: 'Suite et fin du compte rendu « Le Progrès en cour d\'assises » (début p. 76).',
   86: 'Suite et fin de « Ma réponse » à M. Loizeau (début p. 85).',
-  101: '« Revue humoristique de la presse régionale » : affaire de duel entre MM. Savigny et Ossian Pic.',
+  101: '« Revue humouristique de la presse régionale » : affaire de duel entre MM. Savigny et Ossian Pic.',
   108: 'Suite et fin du compte rendu « Le procès des landes de Madion » (début p. 107).',
   124: "Juillet 1876 : Mouroux, « ancien instituteur à Saintes », comparaît devant le tribunal correctionnel de Saintes, « poursuivi comme escroc » (l'article indique « vendredi 6 juillet 1876 », le 6 juillet étant en réalité un jeudi) : il avait collecté de l'argent par voie d'annonces en promettant les violettes et le secret du « Père la Violette », un cultivateur de Chaumet.",
   126: "Discours manuscrit, non signé, « prononcé à [la] distribution de prix de l'école communale à Melle le 24 août 1880 » ; l'orateur préside « au nom de l'administration municipale ». Théodore Girard était alors adjoint au maire de Melle (élu en 1878 selon la biographie du Sénat, ou nommé le 9 février 1881 selon l'arbre p. 146).",
